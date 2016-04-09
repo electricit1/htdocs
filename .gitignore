@@ -5,3 +5,5 @@ composer.lock
 
 # The developers Playground
 works
+
+app/Logs/error.log

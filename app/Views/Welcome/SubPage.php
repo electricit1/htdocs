@@ -9,5 +9,4 @@
 
 </a>
 
-<?php app/Controllers/Demo::test(1)?>
 
