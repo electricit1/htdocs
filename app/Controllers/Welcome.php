@@ -20,8 +20,11 @@ class Welcome extends Controller
         $data['welcomeMessage'] = $this->language->get('welcomeMessage');
         $data['ElementyMenu'] = $this->language->get('ElementyMenu');
 
+        $data['menu'] = array
+        (
+            array('link' => '\'#\'', 'val' => 'cos')
+        );
         View::renderTemplate('header', $data);
-        View::render('Welcome/Menu', $data);
         View::render('Welcome/Welcome', $data);
         View::renderTemplate('footer', $data);
     }

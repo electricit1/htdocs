@@ -7,3 +7,4 @@ composer.lock
 works
 
 app/Logs/error.log
+app/Logs/error.log
