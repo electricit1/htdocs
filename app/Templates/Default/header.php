@@ -7,14 +7,10 @@
     <?php
     echo $meta;//place to pass data / plugable hook zone
     Assets::css([
-<<<<<<< HEAD
         'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
         Url::templatePath().'css/style.css',
-=======
         'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css',
         '../Templates/Default/Assets/css/style.css'
-        
->>>>>>> origin/master
     ]);
     echo $css; //place to pass data / plugable hook zone
     ?>
@@ -77,8 +73,4 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="container">
-<<<<<<< HEAD
-   
 
-=======
->>>>>>> origin/master

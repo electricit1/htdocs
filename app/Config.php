@@ -34,7 +34,7 @@ class Config
         /**
          * Define the complete site URL.
          */
-        define('SITEURL', 'http://novaframework.dev/');
+        define('SITEURL', 'localhost:80/');
 
         /**
          * Define relative base path.

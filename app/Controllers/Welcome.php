@@ -1,35 +1,19 @@
-<?php
-/**
- * Welcome controller
- *
- * @author David Carr - dave@novaframework.com
- * @version 3.0
- */
+<?php namespace App\Controllers;
 
-namespace App\Controllers;
+use Core\View,
+    Core\Controller,
+    Helpers\Session;
 
-use Core\View;
-use Core\Controller;
-use Helpers\Session;
-
-
-/**
- * Sample controller showing a construct and 2 methods and their typical usage.
- */
 class Welcome extends Controller
 {
-    /**
-     * Call the parent construct
-     */
+
     public function __construct()
     {
         parent::__construct();
         $this->language->load('Welcome');
     }
 
-    /**
-     * Define Index page title and load template files
-     */
+
     public function index()
     {
         $data['title'] = $this->language->get('welcomeText');
@@ -42,9 +26,6 @@ class Welcome extends Controller
         View::renderTemplate('footer', $data);
     }
 
-    /**
-     * Define Subpage page title and load template files
-     */
     public function subPage()
     {
         $data['title'] = $this->language->get('subpageText');
