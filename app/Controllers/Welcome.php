@@ -35,7 +35,7 @@ class Welcome extends Controller
         $data['title'] = $this->language->get('welcomeText');
         $data['welcomeMessage'] = $this->language->get('welcomeMessage');
         $data['ElementyMenu'] = $this->language->get('ElementyMenu');
-        
+
         View::renderTemplate('header', $data);
         View::render('Welcome/Menu', $data);
         View::render('Welcome/Welcome', $data);
@@ -52,6 +52,16 @@ class Welcome extends Controller
 
         View::renderTemplate('header', $data);
         View::render('Welcome/SubPage', $data);
+        View::renderTemplate('footer', $data);
+    }
+
+    public function signin()
+    {
+        $data['title'] = $this->language->get('subpageText');
+        $data['welcomeMessage'] = $this->language->get('subpageMessage');
+
+        View::renderTemplate('header', $data);
+        View::render('Welcome/signin', $data);
         View::renderTemplate('footer', $data);
     }
 }
