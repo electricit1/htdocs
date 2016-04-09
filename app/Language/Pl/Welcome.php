@@ -22,4 +22,6 @@ return array(
 	'openSubpage' => 'Otwórz podstronę',
 	'backHome' => 'Strona główna',
 
+	'ElementyMenu' => array('edek','mietek','kredek','dzidzia','rysia','mietek','kredek','dzidzia','rysia')
+
 );
