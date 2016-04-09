@@ -18,5 +18,3 @@
 <?php echo $afterBody; //place to pass data / plugable hook zone?>
 
 <div class="container">
-
-<p><img src='<?=Url::templatePath();?>images/nova.png' alt='<?=SITETITLE;?>'></p>

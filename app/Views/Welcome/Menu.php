@@ -9,7 +9,6 @@
       <a class="navbar-brand" href="#">WebSiteName</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
       <?php foreach ($ElementyMenu as $value): ?>
       <li><a href="#"><?php echo $value; ?></a></li>
   	  <?php endforeach ?>
