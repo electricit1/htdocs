@@ -6,4 +6,7 @@
 
 <a class="btn btn-md btn-success" href="<?=DIR;?>">
 	<?php echo Language::show('backHome', 'Welcome'); ?>
+
 </a>
+
+<?php app/Controllers/Demo::test(1)?>
