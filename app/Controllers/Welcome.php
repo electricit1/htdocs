@@ -12,6 +12,7 @@ use Core\View;
 use Core\Controller;
 use Helpers\Session;
 
+
 /**
  * Sample controller showing a construct and 2 methods and their typical usage.
  */
@@ -33,8 +34,10 @@ class Welcome extends Controller
     {
         $data['title'] = $this->language->get('welcomeText');
         $data['welcomeMessage'] = $this->language->get('welcomeMessage');
-
+        $data['ElementyMenu'] = $this->language->get('ElementyMenu');
+        
         View::renderTemplate('header', $data);
+        View::render('Welcome/Menu', $data);
         View::render('Welcome/Welcome', $data);
         View::renderTemplate('footer', $data);
     }

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="<?php echo LANGUAGE_CODE; ?>">
 <head>
@@ -7,7 +8,8 @@
     echo $meta;//place to pass data / plugable hook zone
     Assets::css([
         'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css',
-        Url::templatePath().'css/style.css',
+        '../Templates/Default/Assets/css/style.css'
+        
     ]);
     echo $css; //place to pass data / plugable hook zone
     ?>
