@@ -17,7 +17,7 @@
 </head>
 <body>
 <?php echo $afterBody; //place to pass data / plugable hook zone?>
-<<<<<<< HEAD
+
 
 
 <nav class="navbar navbar-default" role="navigation">
@@ -75,8 +75,5 @@
 </nav>
 <div class="container">
 
-=======
+
 <div class="container">
-
-
->>>>>>> origin/master
