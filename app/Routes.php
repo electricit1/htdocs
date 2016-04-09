@@ -18,6 +18,7 @@ $router = Router::getInstance();
 // Default Routing
 Router::any('', 'App\Controllers\Welcome@index');
 Router::any('subpage', 'App\Controllers\Welcome@subPage');
+Router::any('signin', 'App\Controllers\Welcome@signin');
 Router::any('admin/(:any)(/(:any)(/(:any)(/(:any))))', 'App\Controllers\Demo@test');
 Router::any('test/(:any)', 'App\Controllers\test@wyswietl');
 /** End default routes */
