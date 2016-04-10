@@ -92,6 +92,17 @@ insert into zestaw values (1,1,1,2,1,'Instrumenty','gitara;gituar','1',current_d
 
 insert into wynik values (1,1,1,current_date,9.5);
 
+
+INSERT INTO `konto` (`id`, `id_rola`, `imie`, `nazwisko`, `email`, `login`, `haslo`) VALUES
+(1, 1, 'radix', 'uczen', 'radix@master.pl', 'uczen', '$2y$10$ONLqsb2jCLwCfd/.ozFL5OMqrgSy5meWuGyjGn1/i2EwCivEGZ5Iu'),
+(2, 4, 'admin', 'sort', 'radix@master.pl', 'admin', '$2y$10$ONLqsb2jCLwCfd/.ozFL5OMqrgSy5meWuGyjGn1/i2EwCivEGZ5Iu'),
+(3, 2, 'redaktor', 'sort', 'radix@master.pl', 'redaktor', '$2y$10$ONLqsb2jCLwCfd/.ozFL5OMqrgSy5meWuGyjGn1/i2EwCivEGZ5Iu'),
+(4, 3, 'superredaktor', 'sort', 'radix@master.pl', 'superredaktor', '$2y$10$ONLqsb2jCLwCfd/.ozFL5OMqrgSy5meWuGyjGn1/i2EwCivEGZ5Iu');
+
+
+
+
+
 Select * from kategoria;
 Select * from podkategoria;
 Select * from jezyk;
