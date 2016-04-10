@@ -16,14 +16,14 @@
     ?>
 </head>
 <body>
-<?php echo $afterBody; //place to pass data / plugable hook zone?>
+<!--<?php echo $afterBody; //place to pass data / plugable hook zone?>-->
 
 
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Zajebista</a>
+      <a class="navbar-brand" href="/">Zajebista</a>
     </div>
     <ul class="nav navbar-nav">
       <?php foreach ($data['menu'] as $value){ 
@@ -33,11 +33,11 @@
     <ul class="nav navbar-nav navbar-right">
       <?php 
       if($data['sessionSet']){
-        echo '<li><a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span>$data[\'login\']</a></li>';
+        echo "<li><a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span> $data[fullname]</a></li>";
       }
       else{
-        echo '<li><a href=\"/signup\" "><span class="glyphicon glyphicon-user"></span>Zarejestruj się</a></li>';
-        echo '<li><a href=\"/login\" "><span class="glyphicon glyphicon-user"></span>Zaloguj się</a></li>';
+        echo '<li><a href="/signup" "><span class="glyphicon glyphicon-user"></span> Zarejestruj się</a></li>';
+        echo '<li><a href="/login" "><span class="glyphicon glyphicon-user"></span> Zaloguj się</a></li>';
       } ?>
 
     </ul>
@@ -45,4 +45,4 @@
 </nav>
 
 
-<div class="container">
+<div class="container-fluid">

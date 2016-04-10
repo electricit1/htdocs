@@ -1,62 +1,62 @@
-drop table podkategoria CASCADE;
-drop table kategoria CASCADE;
-drop table jezyk CASCADE;
-drop table rola CASCADE;
-drop table konto CASCADE;
-drop table uprawnienia CASCADE;
-drop table zestaw CASCADE;
-drop table wynik CASCADE;
+drop table if exists podkategoria CASCADE;
+drop table if exists kategoria CASCADE;
+drop table if exists jezyk CASCADE;
+drop table if exists rola CASCADE;
+drop table if exists konto CASCADE;
+drop table if exists uprawnienia CASCADE;
+drop table if exists zestaw CASCADE;
+drop table if exists wynik CASCADE;
 
 
 CREATE TABLE kategoria(
    id			  SERIAL PRIMARY KEY NOT NULL,
-   nazwa		TEXT Unique NOT NULL,
+   nazwa		TEXT NOT NULL,
    opis	    TEXT NOT NULL,
    obrazek	TEXT NOT NULL
 );
 
 CREATE TABLE podkategoria(
    id           SERIAL PRIMARY KEY NOT NULL,
-   id_kategoria SERIAL NOT NULL REFERENCES kategoria (id) ON UPDATE CASCADE ON DELETE CASCADE,
-   nazwa        TEXT Unique NOT NULL,
-   opis         TEXT NOT NULL,
-   obrazek      TEXT NOT NULL
+   id_kategoria INT NOT NULL REFERENCES kategoria (id) ON UPDATE CASCADE ON DELETE CASCADE,
+   nazwa        VARCHAR(50) UNIQUE NOT NULL,
+   opis         VARCHAR(200) NOT NULL,
+   obrazek      VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE jezyk(
    id       SERIAL PRIMARY KEY NOT NULL,
-   nazwa    TEXT Unique NOT NULL
+   nazwa    VARCHAR(30) UNIQUE NOT NULL
 );
 
 CREATE TABLE rola(
    id       SERIAL PRIMARY KEY NOT NULL,
-   nazwa    TEXT Unique NOT NULL,
-   opis     TEXT NOT NULL
+   nazwa    VARCHAR(50) NOT NULL,
+   opis     VARCHAR(200) NOT NULL
 );
 
 CREATE TABLE konto(
    id           SERIAL PRIMARY KEY NOT NULL,
-   id_rola      SERIAL NOT NULL REFERENCES rola (id) ON UPDATE CASCADE ON DELETE CASCADE,
-   imie         TEXT NOT NULL,
-   nazwisko     TEXT NOT NULL,
-   email        TEXT NOT NULL,
-   login        TEXT NOT NULL,
-   haslo        TEXT NOT NULL
+   id_rola      INT NOT NULL REFERENCES rola (id) ON UPDATE CASCADE ON DELETE CASCADE,
+   imie         VARCHAR(30) NOT NULL,
+   nazwisko     VARCHAR(30) NOT NULL,
+   email        VARCHAR(50) NOT NULL,
+   login        VARCHAR(20) NOT NULL,
+   haslo        VARCHAR(200) NOT NULL
 );
 
 CREATE TABLE uprawnienia(
    id               SERIAL PRIMARY KEY NOT NULL,
-   id_konto         SERIAL NOT NULL REFERENCES konto (id) ON UPDATE CASCADE ON DELETE CASCADE,
-   id_podkategoria  SERIAL NOT NULL REFERENCES podkategoria (id) ON UPDATE CASCADE ON DELETE CASCADE
+   id_konto         INT NOT NULL REFERENCES konto (id) ON UPDATE CASCADE ON DELETE CASCADE,
+   id_podkategoria  INT NOT NULL REFERENCES podkategoria (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE zestaw(
    id                  SERIAL PRIMARY KEY NOT NULL,
-   id_konto            SERIAL NOT NULL REFERENCES konto (id) ON UPDATE CASCADE ON DELETE CASCADE,
-   id_jezyk1           SERIAL NOT NULL REFERENCES jezyk (id) ON UPDATE CASCADE ON DELETE CASCADE,
-   id_jezyk2           SERIAL NOT NULL REFERENCES jezyk (id) ON UPDATE CASCADE ON DELETE CASCADE,
-   id_podkategoria     SERIAL NOT NULL REFERENCES podkategoria (id) ON UPDATE CASCADE ON DELETE CASCADE,
-   nazwa               TEXT NOT NULL,
+   id_konto            INT NOT NULL REFERENCES konto (id) ON UPDATE CASCADE ON DELETE CASCADE,
+   id_jezyk1           INT NOT NULL REFERENCES jezyk (id) ON UPDATE CASCADE ON DELETE CASCADE,
+   id_jezyk2           INT NOT NULL REFERENCES jezyk (id) ON UPDATE CASCADE ON DELETE CASCADE,
+   id_podkategoria     INT NOT NULL REFERENCES podkategoria (id) ON UPDATE CASCADE ON DELETE CASCADE,
+   nazwa               VARCHAR(30) NOT NULL,
    zestaw              TEXT NOT NULL,
    ilosc_slowek        INT,
    data_edycji         DATE NOT NULL
@@ -64,8 +64,8 @@ CREATE TABLE zestaw(
 
 CREATE TABLE wynik(
    id                  SERIAL PRIMARY KEY NOT NULL,
-   id_konto            SERIAL NOT NULL REFERENCES konto (id) ON UPDATE CASCADE ON DELETE CASCADE,
-   id_zestaw           SERIAL NOT NULL REFERENCES zestaw (id) ON UPDATE CASCADE ON DELETE CASCADE,
+   id_konto            INT NOT NULL REFERENCES konto (id) ON UPDATE CASCADE ON DELETE CASCADE,
+   id_zestaw           INT NOT NULL REFERENCES zestaw (id) ON UPDATE CASCADE ON DELETE CASCADE,
    data_wyniku         DATE NOT NULL,
    wynik               REAL
 );
@@ -83,8 +83,6 @@ insert into rola values (4,'admin','jedyny na obiekcie');
 insert into rola values (3,'super redaktor','poprawia po zwyklym pajacu');
 insert into rola values (2,'redaktor','niby cos tam robi');
 insert into rola values (1,'uczen','wszystko przez tego leszcza');
-
-insert into konto values (1,1,'Radek','Golunski','jakisfrajer@koscierzyna.pl','radekmaster1','radekleszcz');
 
 insert into uprawnienia values (1,1,1);
 

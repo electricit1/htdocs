@@ -75,12 +75,12 @@ class Config
         /**
          * Database host default is localhost.
          */
-        define('DB_HOST', 'localhost');
+        define('DB_HOST', 'localhost:3307');
 
         /**
          * Database name.
          */
-        define('DB_NAME', 'dbname');
+        define('DB_NAME', 'nova');
 
         /**
          * Database username.
@@ -90,12 +90,12 @@ class Config
         /**
          * Database password.
          */
-        define('DB_PASS', 'password');
+        define('DB_PASS', 'root');
 
         /**
          * PREFER to be used in database calls default is smvc_
          */
-        define('PREFIX', 'nova_');
+        define('PREFIX', '');
 
         /**
          * Set prefix for sessions.

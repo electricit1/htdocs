@@ -24,7 +24,8 @@ class Welcome extends Controller
         (
             array('link' => '\'#\'', 'val' => 'cos')
         );
-        View::renderTemplate('header', $data);
+        Menu::renderHeaderWithMenu();
+        //View::renderTemplate('header', $data);
         View::render('Welcome/Welcome', $data);
         View::renderTemplate('footer', $data);
     }
@@ -34,7 +35,8 @@ class Welcome extends Controller
         $data['title'] = $this->language->get('subpageText');
         $data['welcomeMessage'] = $this->language->get('subpageMessage');
 
-        View::renderTemplate('header', $data);
+        Menu::renderHeaderWithMenu();
+        //View::renderTemplate('header', $data);
         View::render('Welcome/SubPage', $data);
         View::renderTemplate('footer', $data);
     }

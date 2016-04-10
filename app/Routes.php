@@ -21,6 +21,7 @@ Router::any('subpage', 'App\Controllers\Welcome@subPage');
 Router::any('admin/(:any)(/(:any)(/(:any)(/(:any))))', 'App\Controllers\Demo@test');
 Router::any('test/(:any)', 'App\Controllers\test@wyswietl');
 Router::any('login', 'App\Controllers\Auth@login');
+Router::any('logout', 'App\Controllers\Auth@logout');
 /** End default routes */
 
 
