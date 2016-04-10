@@ -58,3 +58,453 @@
 
 2016-04-10 0:18AM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
 
+Exception information:
+
+           Date: Apr 10, 2016 18:00PM
+
+           Message: SQLSTATE[HY000] [2002] Nie mo¿na nawi¹zaæ po³¹czenia, poniewa¿ komputer docelowy aktywnie go odmawia.
+
+
+           Code: 2002
+
+           File: D:\Programy\xampp\htdocs\system\Helpers\Database.php
+
+           Line: 59
+
+           Stack trace:
+
+           #0 D:\Programy\xampp\htdocs\system\Helpers\Database.php(59): PDO->__construct('mysql:host=loca...', '********', '********')
+#1 D:\Programy\xampp\htdocs\system\Core\Model.php(31): Helpers\Database::get()
+#2 D:\Programy\xampp\htdocs\app\Controllers\auth.php(13): Core\Model->__construct()
+#3 D:\Programy\xampp\htdocs\system\Core\Router.php(205): App\Controllers\Auth->__construct()
+#4 D:\Programy\xampp\htdocs\system\Core\Router.php(244): Core\Router->invokeController('App\\Controllers...', 'login', Array)
+#5 D:\Programy\xampp\htdocs\system\Core\Router.php(281): Core\Router->invokeObject('App\\Controllers...', Array)
+#6 D:\Programy\xampp\htdocs\app\Routes.php(37): Core\Router->dispatch()
+#7 D:\Programy\xampp\htdocs\public\index.php(74): require('D:\\Programy\\xam...')
+#8 {main}
+
+           ---------
+
+Exception information:
+
+           Date: Apr 10, 2016 18:00PM
+
+           Message: SQLSTATE[HY000] [2002] Nie mo¿na nawi¹zaæ po³¹czenia, poniewa¿ komputer docelowy aktywnie go odmawia.
+
+
+           Code: 2002
+
+           File: D:\Programy\xampp\htdocs\system\Helpers\Database.php
+
+           Line: 59
+
+           Stack trace:
+
+           #0 D:\Programy\xampp\htdocs\system\Helpers\Database.php(59): PDO->__construct('mysql:host=loca...', '********', '********')
+#1 D:\Programy\xampp\htdocs\system\Core\Model.php(31): Helpers\Database::get()
+#2 D:\Programy\xampp\htdocs\app\Controllers\Menu.php(12): Core\Model->__construct()
+#3 D:\Programy\xampp\htdocs\app\Controllers\Welcome.php(27): App\Controllers\Menu->renderHeaderWithMenu()
+#4 [internal function]: App\Controllers\Welcome->index()
+#5 D:\Programy\xampp\htdocs\system\Core\Router.php(213): call_user_func_array(Array, Array)
+#6 D:\Programy\xampp\htdocs\system\Core\Router.php(244): Core\Router->invokeController('App\\Controllers...', 'index', Array)
+#7 D:\Programy\xampp\htdocs\system\Core\Router.php(281): Core\Router->invokeObject('App\\Controllers...', Array)
+#8 D:\Programy\xampp\htdocs\app\Routes.php(37): Core\Router->dispatch()
+#9 D:\Programy\xampp\htdocs\public\index.php(74): require('D:\\Programy\\xam...')
+#10 {main}
+
+           ---------
+
+Exception information:
+
+           Date: Apr 10, 2016 18:00PM
+
+           Message: SQLSTATE[HY000] [2002] Nie mo¿na nawi¹zaæ po³¹czenia, poniewa¿ komputer docelowy aktywnie go odmawia.
+
+
+           Code: 2002
+
+           File: D:\Programy\xampp\htdocs\system\Helpers\Database.php
+
+           Line: 59
+
+           Stack trace:
+
+           #0 D:\Programy\xampp\htdocs\system\Helpers\Database.php(59): PDO->__construct('mysql:host=loca...', '********', '********')
+#1 D:\Programy\xampp\htdocs\system\Core\Model.php(31): Helpers\Database::get()
+#2 D:\Programy\xampp\htdocs\app\Controllers\Menu.php(12): Core\Model->__construct()
+#3 D:\Programy\xampp\htdocs\app\Controllers\Welcome.php(27): App\Controllers\Menu->renderHeaderWithMenu()
+#4 [internal function]: App\Controllers\Welcome->index()
+#5 D:\Programy\xampp\htdocs\system\Core\Router.php(213): call_user_func_array(Array, Array)
+#6 D:\Programy\xampp\htdocs\system\Core\Router.php(244): Core\Router->invokeController('App\\Controllers...', 'index', Array)
+#7 D:\Programy\xampp\htdocs\system\Core\Router.php(281): Core\Router->invokeObject('App\\Controllers...', Array)
+#8 D:\Programy\xampp\htdocs\app\Routes.php(37): Core\Router->dispatch()
+#9 D:\Programy\xampp\htdocs\public\index.php(74): require('D:\\Programy\\xam...')
+#10 {main}
+
+           ---------
+
+Exception information:
+
+           Date: Apr 10, 2016 18:01PM
+
+           Message: SQLSTATE[HY000] [2002] Nie mo¿na nawi¹zaæ po³¹czenia, poniewa¿ komputer docelowy aktywnie go odmawia.
+
+
+           Code: 2002
+
+           File: D:\Programy\xampp\htdocs\system\Helpers\Database.php
+
+           Line: 59
+
+           Stack trace:
+
+           #0 D:\Programy\xampp\htdocs\system\Helpers\Database.php(59): PDO->__construct('mysql:host=loca...', '********', '********')
+#1 D:\Programy\xampp\htdocs\system\Core\Model.php(31): Helpers\Database::get()
+#2 D:\Programy\xampp\htdocs\app\Controllers\Menu.php(12): Core\Model->__construct()
+#3 D:\Programy\xampp\htdocs\app\Controllers\Welcome.php(27): App\Controllers\Menu->renderHeaderWithMenu()
+#4 [internal function]: App\Controllers\Welcome->index()
+#5 D:\Programy\xampp\htdocs\system\Core\Router.php(213): call_user_func_array(Array, Array)
+#6 D:\Programy\xampp\htdocs\system\Core\Router.php(244): Core\Router->invokeController('App\\Controllers...', 'index', Array)
+#7 D:\Programy\xampp\htdocs\system\Core\Router.php(281): Core\Router->invokeObject('App\\Controllers...', Array)
+#8 D:\Programy\xampp\htdocs\app\Routes.php(37): Core\Router->dispatch()
+#9 D:\Programy\xampp\htdocs\public\index.php(74): require('D:\\Programy\\xam...')
+#10 {main}
+
+           ---------
+
+Exception information:
+
+           Date: Apr 10, 2016 18:01PM
+
+           Message: SQLSTATE[HY000] [2002] Nie mo¿na nawi¹zaæ po³¹czenia, poniewa¿ komputer docelowy aktywnie go odmawia.
+
+
+           Code: 2002
+
+           File: D:\Programy\xampp\htdocs\system\Helpers\Database.php
+
+           Line: 59
+
+           Stack trace:
+
+           #0 D:\Programy\xampp\htdocs\system\Helpers\Database.php(59): PDO->__construct('mysql:host=loca...', '********', '********')
+#1 D:\Programy\xampp\htdocs\system\Core\Model.php(31): Helpers\Database::get()
+#2 D:\Programy\xampp\htdocs\app\Controllers\Menu.php(12): Core\Model->__construct()
+#3 D:\Programy\xampp\htdocs\app\Controllers\Welcome.php(27): App\Controllers\Menu->renderHeaderWithMenu()
+#4 [internal function]: App\Controllers\Welcome->index()
+#5 D:\Programy\xampp\htdocs\system\Core\Router.php(213): call_user_func_array(Array, Array)
+#6 D:\Programy\xampp\htdocs\system\Core\Router.php(244): Core\Router->invokeController('App\\Controllers...', 'index', Array)
+#7 D:\Programy\xampp\htdocs\system\Core\Router.php(281): Core\Router->invokeObject('App\\Controllers...', Array)
+#8 D:\Programy\xampp\htdocs\app\Routes.php(37): Core\Router->dispatch()
+#9 D:\Programy\xampp\htdocs\public\index.php(74): require('D:\\Programy\\xam...')
+#10 {main}
+
+           ---------
+
+Exception information:
+
+           Date: Apr 10, 2016 18:01PM
+
+           Message: SQLSTATE[HY000] [2002] Nie mo¿na nawi¹zaæ po³¹czenia, poniewa¿ komputer docelowy aktywnie go odmawia.
+
+
+           Code: 2002
+
+           File: D:\Programy\xampp\htdocs\system\Helpers\Database.php
+
+           Line: 59
+
+           Stack trace:
+
+           #0 D:\Programy\xampp\htdocs\system\Helpers\Database.php(59): PDO->__construct('mysql:host=loca...', '********', '********')
+#1 D:\Programy\xampp\htdocs\system\Core\Model.php(31): Helpers\Database::get()
+#2 D:\Programy\xampp\htdocs\app\Controllers\Menu.php(12): Core\Model->__construct()
+#3 D:\Programy\xampp\htdocs\app\Controllers\Welcome.php(27): App\Controllers\Menu->renderHeaderWithMenu()
+#4 [internal function]: App\Controllers\Welcome->index()
+#5 D:\Programy\xampp\htdocs\system\Core\Router.php(213): call_user_func_array(Array, Array)
+#6 D:\Programy\xampp\htdocs\system\Core\Router.php(244): Core\Router->invokeController('App\\Controllers...', 'index', Array)
+#7 D:\Programy\xampp\htdocs\system\Core\Router.php(281): Core\Router->invokeObject('App\\Controllers...', Array)
+#8 D:\Programy\xampp\htdocs\app\Routes.php(37): Core\Router->dispatch()
+#9 D:\Programy\xampp\htdocs\public\index.php(74): require('D:\\Programy\\xam...')
+#10 {main}
+
+           ---------
+
+Exception information:
+
+           Date: Apr 10, 2016 18:01PM
+
+           Message: SQLSTATE[HY000] [2002] Nie mo¿na nawi¹zaæ po³¹czenia, poniewa¿ komputer docelowy aktywnie go odmawia.
+
+
+           Code: 2002
+
+           File: D:\Programy\xampp\htdocs\system\Helpers\Database.php
+
+           Line: 59
+
+           Stack trace:
+
+           #0 D:\Programy\xampp\htdocs\system\Helpers\Database.php(59): PDO->__construct('mysql:host=loca...', '********', '********')
+#1 D:\Programy\xampp\htdocs\system\Core\Model.php(31): Helpers\Database::get()
+#2 D:\Programy\xampp\htdocs\app\Controllers\Menu.php(12): Core\Model->__construct()
+#3 D:\Programy\xampp\htdocs\app\Controllers\Welcome.php(27): App\Controllers\Menu->renderHeaderWithMenu()
+#4 [internal function]: App\Controllers\Welcome->index()
+#5 D:\Programy\xampp\htdocs\system\Core\Router.php(213): call_user_func_array(Array, Array)
+#6 D:\Programy\xampp\htdocs\system\Core\Router.php(244): Core\Router->invokeController('App\\Controllers...', 'index', Array)
+#7 D:\Programy\xampp\htdocs\system\Core\Router.php(281): Core\Router->invokeObject('App\\Controllers...', Array)
+#8 D:\Programy\xampp\htdocs\app\Routes.php(37): Core\Router->dispatch()
+#9 D:\Programy\xampp\htdocs\public\index.php(74): require('D:\\Programy\\xam...')
+#10 {main}
+
+           ---------
+
+Exception information:
+
+           Date: Apr 10, 2016 18:03PM
+
+           Message: SQLSTATE[HY000] [2002] Nie mo¿na nawi¹zaæ po³¹czenia, poniewa¿ komputer docelowy aktywnie go odmawia.
+
+
+           Code: 2002
+
+           File: D:\Programy\xampp\htdocs\system\Helpers\Database.php
+
+           Line: 59
+
+           Stack trace:
+
+           #0 D:\Programy\xampp\htdocs\system\Helpers\Database.php(59): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 D:\Programy\xampp\htdocs\system\Core\Model.php(31): Helpers\Database::get()
+#2 D:\Programy\xampp\htdocs\app\Controllers\Menu.php(12): Core\Model->__construct()
+#3 D:\Programy\xampp\htdocs\app\Controllers\Welcome.php(27): App\Controllers\Menu->renderHeaderWithMenu()
+#4 [internal function]: App\Controllers\Welcome->index()
+#5 D:\Programy\xampp\htdocs\system\Core\Router.php(213): call_user_func_array(Array, Array)
+#6 D:\Programy\xampp\htdocs\system\Core\Router.php(244): Core\Router->invokeController('App\\Controllers...', 'index', Array)
+#7 D:\Programy\xampp\htdocs\system\Core\Router.php(281): Core\Router->invokeObject('App\\Controllers...', Array)
+#8 D:\Programy\xampp\htdocs\app\Routes.php(37): Core\Router->dispatch()
+#9 D:\Programy\xampp\htdocs\public\index.php(74): require('D:\\Programy\\xam...')
+#10 {main}
+
+           ---------
+
+2016-04-10 18:04PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 19:05PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 19:05PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 19:06PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 19:06PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 20:16PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\categories.php on line 3
+
+2016-04-10 20:18PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\categories.php on line 3
+
+2016-04-10 20:18PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\categories.php on line 3
+
+2016-04-10 20:18PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\categories.php on line 3
+
+2016-04-10 20:18PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\categories.php on line 3
+
+2016-04-10 20:19PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\categories.php on line 3
+
+2016-04-10 21:30PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:30PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:37PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:37PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:37PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:37PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:37PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:37PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:40PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:40PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:40PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:40PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:41PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:41PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:41PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:41PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:41PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:41PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:42PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:42PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:42PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:42PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:42PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:42PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:43PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:43PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:45PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:45PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:45PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:50PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:50PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:50PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:50PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:50PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:50PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:50PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:50PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:50PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:55PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:55PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:55PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:55PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:55PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:55PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 21:55PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:01PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:01PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:01PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:01PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:01PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:01PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:02PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:02PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:02PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:04PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:04PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:04PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:07PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:07PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:07PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:09PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:09PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:09PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:10PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:11PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:11PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:11PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:13PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:13PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:13PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:13PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:14PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:14PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:14PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:14PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:14PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:16PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:16PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:16PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:16PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:16PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:16PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:17PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:17PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:17PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:17PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:17PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:17PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:17PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:17PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:17PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:17PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:20PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:21PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:21PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:21PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:21PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:21PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:21PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+

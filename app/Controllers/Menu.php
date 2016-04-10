@@ -32,7 +32,7 @@ class Menu extends Controller
 
 	}
 
-	private function getMenuForUser($role)
+	public function getMenuForUser($role)
 	{
 		switch($role)
 		{

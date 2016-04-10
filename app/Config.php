@@ -34,7 +34,8 @@ class Config
         /**
          * Define the complete site URL.
          */
-        define('SITEURL', 'localhost:80/');
+        define('SITEURL', '');//localhost:80/
+        define('OBRAZKI', SITEURL.'/templates/default/assets/images/');//localhost:80/
 
         /**
          * Define relative base path.
@@ -75,7 +76,7 @@ class Config
         /**
          * Database host default is localhost.
          */
-        define('DB_HOST', 'localhost:3307');
+        define('DB_HOST', 'localhost');
 
         /**
          * Database name.
@@ -90,7 +91,7 @@ class Config
         /**
          * Database password.
          */
-        define('DB_PASS', 'root');
+        define('DB_PASS', '');
 
         /**
          * PREFER to be used in database calls default is smvc_

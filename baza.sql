@@ -73,8 +73,19 @@ CREATE TABLE wynik(
 
 
 
-insert into kategoria values (1,'Muzyka','Znane na calym swiecie','soundnote.png');
-insert into podkategoria values (1,1,'Rock','Instrumenty zwiazane z rockiem','instrument.png');
+INSERT INTO `kategoria` (`id`, `nazwa`, `opis`, `obrazek`) VALUES
+(1, 'Muzyka', 'Znane na calym swiecie', 'soundnote.png'),
+(2, 'Narzedzia', 'Codziennie uzywane', 'tools.png'),
+(3, 'Geografia', 'Swiat', 'world.png');
+
+
+INSERT INTO `podkategoria` (`id`, `id_kategoria`, `nazwa`, `opis`, `obrazek`) VALUES
+(1, 1, 'Rock', 'Instrumenty zwiazane z rockiem', 'electricgituar.png'),
+(2, 1, 'Pop', 'Gwiazdy zwiazane z rokciem', 'pop.png'),
+(3, 2, 'Budowlane', 'Uzywane na budowie', 'bulidhelmet.png'),
+(4, 2, 'Ogrodowe', 'Do pielegnacji ogrodu', 'rake.png'),
+(5, 3, 'Afryka', 'Rzeki Afryki', 'africa.png'),
+(6, 3, 'Europa', 'Miasta Europy', 'europe.png');
 
 insert into jezyk values (1,'polski');
 insert into jezyk values (2,'angielski');
