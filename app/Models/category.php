@@ -8,7 +8,7 @@ class category extends \core\model
 	}
 
 	public function getsubcategories($idkategori) {
-		$data['podkategorie'] = $this->db->select("SELECT id,nazwa,opis,obrazek FROM ".PREFIX."podkategoria where id_kategoria=".$idkategori);
+		$data['podkategorie'] = $this->db->select("SELECT id,id_kategoria,nazwa,opis,obrazek FROM ".PREFIX."podkategoria where id_kategoria=".$idkategori);
 		return $data;
 	}
 

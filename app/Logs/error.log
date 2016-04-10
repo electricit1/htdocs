@@ -508,3 +508,119 @@ Exception information:
 
 2016-04-10 22:21PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
 
+2016-04-10 22:27PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:27PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:27PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:27PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:27PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:27PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:27PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:27PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:27PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:30PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:30PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:30PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:30PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:30PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:31PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:31PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+Exception information:
+
+           Date: Apr 10, 2016 22:31PM
+
+           Message: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'kategorie1' in 'where clause'
+
+           Code: 42S22
+
+           File: D:\Programy\xampp\htdocs\system\Helpers\Database.php
+
+           Line: 102
+
+           Stack trace:
+
+           #0 D:\Programy\xampp\htdocs\system\Helpers\Database.php(102): PDOStatement->execute()
+#1 D:\Programy\xampp\htdocs\app\Models\category.php(11): Helpers\Database->select('SELECT id,nazwa...')
+#2 D:\Programy\xampp\htdocs\app\Controllers\kategorie.php(77): App\models\category->getsubcategories('kategorie1')
+#3 D:\Programy\xampp\htdocs\app\Controllers\kategorie.php(52): App\Controllers\kategorie->renderSubCategories('kategorie1')
+#4 [internal function]: App\Controllers\kategorie->podkategorie('kategorie1')
+#5 D:\Programy\xampp\htdocs\system\Core\Router.php(213): call_user_func_array(Array, Array)
+#6 D:\Programy\xampp\htdocs\system\Core\Router.php(244): Core\Router->invokeController('App\\Controllers...', 'podkategorie', Array)
+#7 D:\Programy\xampp\htdocs\system\Core\Router.php(281): Core\Router->invokeObject('App\\Controllers...', Array)
+#8 D:\Programy\xampp\htdocs\app\Routes.php(39): Core\Router->dispatch()
+#9 D:\Programy\xampp\htdocs\public\index.php(74): require('D:\\Programy\\xam...')
+#10 {main}
+
+           ---------
+
+2016-04-10 22:31PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:31PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:31PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:31PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:31PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:31PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:31PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:31PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:31PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:32PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:32PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:32PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:32PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:32PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:32PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:32PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:32PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:32PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:32PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:33PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:33PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:33PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:33PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:33PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:33PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:33PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:33PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 22:33PM - Invalid argument supplied for foreach() in D:\Programy\xampp\htdocs\app\Templates\Default\header.php on line 29
+
