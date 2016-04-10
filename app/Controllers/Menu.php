@@ -25,10 +25,7 @@ class Menu extends Controller
 		} 
 		else
 		{
-       	 	$data['menu'] = array
-        	(
-            	array('link' => '\'#\'', 'val' => 'cos')
-        	);
+       	 	$data['menu'] = $data['menu'] = $menu->getMenuForUser($_userModel->getRole(0));
 		}
 		echo $_userModel->getRole($userID);
 		View::renderTemplate('header', $data);
@@ -39,18 +36,25 @@ class Menu extends Controller
 	{
 		switch($role)
 		{
-			case '1':
-				return array
-					(
-						array('link' => '#', 'val' => 'menu1 dla ucznia'),
-						array('link' => '#', 'val' => 'menu2 dla ucznia')
-					);
+			case '1': // uczen
+				$this->language->load('Welcome');
+				return $this->language->get('menuuczen');
 				break;
-			default:
-			    return array
-        		(
-            		array('link' => '\'#\'', 'val' => 'cos')
-        		);
+			case '2': //maly redaktor
+				$this->language->load('Welcome');
+				return $this->language->get('menuredaktor');
+				break;
+			case '3': //super redaktor
+				$this->language->load('Welcome');
+				return $this->language->get('menusuperredaktor');
+				break;
+			case '4': //admin
+				$this->language->load('Welcome');
+				return $this->language->get('menuadmin');
+				break;
+			default: //nie zalogowany
+			    $this->language->load('Welcome');
+				return $this->language->get('nikt');
 		}
 
 	}

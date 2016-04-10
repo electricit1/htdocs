@@ -22,6 +22,36 @@ return array(
 	'openSubpage' => 'Otwórz podstronę',
 	'backHome' => 'Strona główna',
 
-	'ElementyMenu' => array('edek','mietek','kredek','dzidzia','rysia','mietek','kredek','dzidzia','rysia')
+	'menuuczen' => array(
+		array('link' => '/', 'val' => 'Strona Główna'),
+		array('link' => '/kategorie', 'val' => 'Kategorie'),
+		array('link' => '/wyniki', 'val' => 'Sprawdz wyniki'),
+		array('link' => '/wynikigraficzne', 'val' => 'Sprawdz wyniki graficznie'),
+		array('link' => '/tworzprywatne', 'val' => 'Prywatne zestawy')),
+	'menuredaktor' => array(
+		array('link' => '/', 'val' => 'Strona Główna'),
+		array('link' => '/kategorie', 'val' => 'Kategorie'),
+		array('link' => '/wyniki', 'val' => 'Sprawdz wyniki'),
+		array('link' => '/wynikigraficzne', 'val' => 'Sprawdz wyniki graficznie'),
+		array('link' => '/tworzprywatne', 'val' => 'Prywatne zestawy'),
+		array('link' => '/dodajzestawy', 'val' => 'Dodaj zestaw do podkategorii'),
+		array('link' => '/edytujzestaw', 'val' => 'Edytuj Zestaw')),
+	'menusuperredaktor' => array(
+		array('link' => '/', 'val' => 'Strona Główna'),
+		array('link' => '/kategorie', 'val' => 'Kategorie'),
+		array('link' => '/wyniki', 'val' => 'Sprawdz wyniki'),
+		array('link' => '/wynikigraficzne', 'val' => 'Sprawdz wyniki graficznie'),
+		array('link' => '/tworzprywatne', 'val' => 'Prywatne zestawy'),
+		array('link' => '/edytujzestaw', 'val' => 'Edytuj wszystkie Zestawy')),
+	'menuadmin' => array(
+		array('link' => '/kategorie', 'val' => 'Edytuj kategorie i podkategorie'),
+		array('link' => '/zestaw', 'val' => 'Dodaj zestaw'),
+		array('link' => '/zestaw', 'val' => 'Edytuj zestaw'),
+		array('link' => '/zarzadzanie', 'val' => 'Prawa uzytkownikow'),
+		array('link' => '/zarzadzanie', 'val' => 'Zarzadzaj uzytkownikami')),
+	'nikt' => array(
+		array('link' => '/', 'val' => 'Strona Główna'),
+		array('link' => '/kategorie', 'val' => 'Kategorie'))
+
 
 );

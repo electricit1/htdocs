@@ -33,7 +33,7 @@
     <ul class="nav navbar-nav navbar-right">
       <?php 
       if($data['sessionSet']){
-        echo "<li><a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span> $data[fullname]</a></li>";
+        echo "<li><a href=\"/logout\"><span class=\"glyphicon glyphicon-log-in\"></span> $data[fullname]</a></li>";
       }
       else{
         echo '<li><a href="/signup" "><span class="glyphicon glyphicon-user"></span> Zarejestruj się</a></li>';
