@@ -14,35 +14,55 @@
     ]);
     echo $css; //place to pass data / plugable hook zone
     ?>
+    <style>
+    .container-fluid{
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    </style>
 </head>
 <body>
 <!--<?php echo $afterBody; //place to pass data / plugable hook zone?>-->
 
 
-
+<div class="container-fluid" >
+  <div class="row">
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Rozwiń menu</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <a class="navbar-brand" href="/">Zajebista</a>
     </div>
-    <ul class="nav navbar-nav">
-      <?php foreach ($data['menu'] as $value){ 
-          echo '<li><a href='.$value['link'].'>'.$value['val'].'</a></li>';
-      }?>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <?php 
-      if($data['sessionSet']){
-        echo "<li><a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span> $data[fullname]</a></li>";
-      }
-      else{
-        echo '<li><a href="/signup" "><span class="glyphicon glyphicon-user"></span> Zarejestruj się</a></li>';
-        echo '<li><a href="/login" "><span class="glyphicon glyphicon-user"></span> Zaloguj się</a></li>';
-      } ?>
-
-    </ul>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <?php foreach ($data['menu'] as $value){ 
+            echo '<li><a href='.$value['link'].'>'.$value['val'].'</a></li>';
+        }?>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <?php 
+        if($data['sessionSet']){
+          echo "<li><a href=\"#\"><span class=\"glyphicon glyphicon-user\"></span> $data[fullname]</a></li>";
+          echo "<li><a href=\"/logout\"><span class=\"glyphicon glyphicon-log-out\"></span> Wyloguj się </a></li>";
+        }
+        else{
+          echo '<li><a href="/signup" "><span class="glyphicon glyphicon-user"></span> Zarejestruj się</a></li>';
+          echo '<li><a href="/login" "><span class="glyphicon glyphicon-log-in"></span> Zaloguj się</a></li>';
+        } ?>
+      </ul>
+    </div>
   </div>
 </nav>
+</div>
+
+<div class="row" style="padding:10px;">
 
 
-<div class="container-fluid">
+
+

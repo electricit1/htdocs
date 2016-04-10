@@ -58,3 +58,154 @@
 
 2016-04-10 0:18AM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
 
+2016-04-10 0:23AM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 0:30AM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 0:30AM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+Exception information:
+
+           Date: Apr 10, 2016 11:33AM
+
+           Message: SQLSTATE[HY000] [1049] Unknown database 'mysql2'
+
+           Code: 1049
+
+           File: C:\xampp\htdocs\system\Helpers\Database.php
+
+           Line: 59
+
+           Stack trace:
+
+           #0 C:\xampp\htdocs\system\Helpers\Database.php(59): PDO->__construct('mysql:host=loca...', '********', '********')
+#1 C:\xampp\htdocs\system\Core\Model.php(31): Helpers\Database::get()
+#2 C:\xampp\htdocs\app\Controllers\Auth.php(13): Core\Model->__construct()
+#3 C:\xampp\htdocs\system\Core\Router.php(205): App\Controllers\Auth->__construct()
+#4 C:\xampp\htdocs\system\Core\Router.php(244): Core\Router->invokeController('App\\Controllers...', 'login', Array)
+#5 C:\xampp\htdocs\system\Core\Router.php(281): Core\Router->invokeObject('App\\Controllers...', Array)
+#6 C:\xampp\htdocs\app\Routes.php(36): Core\Router->dispatch()
+#7 C:\xampp\htdocs\public\index.php(74): require('C:\\xampp\\htdocs...')
+#8 {main}
+
+           ---------
+
+Exception information:
+
+           Date: Apr 10, 2016 11:39AM
+
+           Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== 'radekmaster1'' at line 1
+
+           Code: 42000
+
+           File: C:\xampp\htdocs\system\Helpers\Database.php
+
+           Line: 102
+
+           Stack trace:
+
+           #0 C:\xampp\htdocs\system\Helpers\Database.php(102): PDOStatement->execute()
+#1 C:\xampp\htdocs\app\Models\User.php(6): Helpers\Database->select('SELECT haslo FR...', Array)
+#2 C:\xampp\htdocs\app\Controllers\Auth.php(31): App\models\User->getHash('radekmaster1')
+#3 [internal function]: App\Controllers\Auth->login()
+#4 C:\xampp\htdocs\system\Core\Router.php(213): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\system\Core\Router.php(244): Core\Router->invokeController('App\\Controllers...', 'login', Array)
+#6 C:\xampp\htdocs\system\Core\Router.php(281): Core\Router->invokeObject('App\\Controllers...', Array)
+#7 C:\xampp\htdocs\app\Routes.php(36): Core\Router->dispatch()
+#8 C:\xampp\htdocs\public\index.php(74): require('C:\\xampp\\htdocs...')
+#9 {main}
+
+           ---------
+
+Exception information:
+
+           Date: Apr 10, 2016 11:39AM
+
+           Message: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mysql.novakonto' doesn't exist
+
+           Code: 42S02
+
+           File: C:\xampp\htdocs\system\Helpers\Database.php
+
+           Line: 102
+
+           Stack trace:
+
+           #0 C:\xampp\htdocs\system\Helpers\Database.php(102): PDOStatement->execute()
+#1 C:\xampp\htdocs\app\Models\User.php(6): Helpers\Database->select('SELECT haslo FR...', Array)
+#2 C:\xampp\htdocs\app\Controllers\Auth.php(31): App\models\User->getHash('radekmaster1')
+#3 [internal function]: App\Controllers\Auth->login()
+#4 C:\xampp\htdocs\system\Core\Router.php(213): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\system\Core\Router.php(244): Core\Router->invokeController('App\\Controllers...', 'login', Array)
+#6 C:\xampp\htdocs\system\Core\Router.php(281): Core\Router->invokeObject('App\\Controllers...', Array)
+#7 C:\xampp\htdocs\app\Routes.php(36): Core\Router->dispatch()
+#8 C:\xampp\htdocs\public\index.php(74): require('C:\\xampp\\htdocs...')
+#9 {main}
+
+           ---------
+
+Exception information:
+
+           Date: Apr 10, 2016 11:40AM
+
+           Message: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'where clause'
+
+           Code: 42S22
+
+           File: C:\xampp\htdocs\system\Helpers\Database.php
+
+           Line: 102
+
+           Stack trace:
+
+           #0 C:\xampp\htdocs\system\Helpers\Database.php(102): PDOStatement->execute()
+#1 C:\xampp\htdocs\app\Models\User.php(6): Helpers\Database->select('SELECT haslo FR...', Array)
+#2 C:\xampp\htdocs\app\Controllers\Auth.php(31): App\models\User->getHash('radekmaster1')
+#3 [internal function]: App\Controllers\Auth->login()
+#4 C:\xampp\htdocs\system\Core\Router.php(213): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\system\Core\Router.php(244): Core\Router->invokeController('App\\Controllers...', 'login', Array)
+#6 C:\xampp\htdocs\system\Core\Router.php(281): Core\Router->invokeObject('App\\Controllers...', Array)
+#7 C:\xampp\htdocs\app\Routes.php(36): Core\Router->dispatch()
+#8 C:\xampp\htdocs\public\index.php(74): require('C:\\xampp\\htdocs...')
+#9 {main}
+
+           ---------
+
+2016-04-10 12:43PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 12:44PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 12:46PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 12:46PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 12:48PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 12:49PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 12:49PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 12:49PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 12:49PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 12:49PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 12:49PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 12:50PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 12:53PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 12:54PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 12:59PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 12:59PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 13:00PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 29
+
+2016-04-10 17:13PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 36
+
+2016-04-10 17:32PM - Invalid argument supplied for foreach() in C:\xampp\htdocs\app\Templates\Default\header.php on line 44
+

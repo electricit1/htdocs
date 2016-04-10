@@ -84,6 +84,8 @@ insert into rola values (3,'super redaktor','poprawia po zwyklym pajacu');
 insert into rola values (2,'redaktor','niby cos tam robi');
 insert into rola values (1,'uczen','wszystko przez tego leszcza');
 
+insert into konto values (1,1,'Radek','Golunski','jakisfrajer@koscierzyna.pl','radekmaster1','$2y$10$ONLqsb2jCLwCfd/.ozFL5OMqrgSy5meWuGyjGn1/i2EwCivEGZ5Iu');
+
 insert into uprawnienia values (1,1,1);
 
 insert into zestaw values (1,1,1,2,1,'Instrumenty','gitara;gituar','1',current_date);
