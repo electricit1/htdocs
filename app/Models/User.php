@@ -34,7 +34,7 @@ class User extends \core\model
 
 	public function getAllUsers()
 	{
-		$data = $this->db->select("SELECT konto.id, imie, nazwisko, login, konto.id_rola, nazwa AS rola FROM ".PREFIX."konto INNER JOIN rola ON konto.id_rola=rola.id");
+		$data = $this->db->select("SELECT konto.id, imie, nazwisko, login, konto.id_rola, email, nazwa AS rola FROM ".PREFIX."konto INNER JOIN rola ON konto.id_rola=rola.id");
 		return $data;
 	}
 

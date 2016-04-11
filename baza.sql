@@ -1,11 +1,11 @@
-drop table if exists podkategoria CASCADE;
-drop table if exists kategoria CASCADE;
-drop table if exists jezyk CASCADE;
-drop table if exists rola CASCADE;
-drop table if exists konto CASCADE;
-drop table if exists uprawnienia CASCADE;
-drop table if exists zestaw CASCADE;
-drop table if exists wynik CASCADE;
+drop table podkategoria CASCADE;
+drop table kategoria CASCADE;
+drop table jezyk CASCADE;
+drop table rola CASCADE;
+drop table konto CASCADE;
+drop table uprawnienia CASCADE;
+drop table zestaw CASCADE;
+drop table wynik CASCADE;
 
 
 CREATE TABLE kategoria(
@@ -110,15 +110,3 @@ INSERT INTO `konto` (`id`, `id_rola`, `imie`, `nazwisko`, `email`, `login`, `has
 (3, 2, 'redaktor', 'sort', 'radix@master.pl', 'redaktor', '$2y$10$ONLqsb2jCLwCfd/.ozFL5OMqrgSy5meWuGyjGn1/i2EwCivEGZ5Iu'),
 (4, 3, 'superredaktor', 'sort', 'radix@master.pl', 'superredaktor', '$2y$10$ONLqsb2jCLwCfd/.ozFL5OMqrgSy5meWuGyjGn1/i2EwCivEGZ5Iu');
 
-
-
-
-
-Select * from kategoria;
-Select * from podkategoria;
-Select * from jezyk;
-Select * from rola;
-Select * from konto;
-Select * from uprawnienia;
-Select * from zestaw;
-Select * from wynik;

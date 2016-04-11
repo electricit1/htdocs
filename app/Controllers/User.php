@@ -83,7 +83,7 @@ class User extends Controller
         		{
         			if($this->_model->getRole(Session::get('userID')) == 4 && $this->_model->getRole($id) != 4)
         				$data['roles'] = $this->_model->getAllRoles();
-        			$data['user'] = $this->_model->getUser(Session::get('userID'));
+        			$data['user'] = $this->_model->getUser($id);//Session::get('userID'));
         			//$error= '';
         			Menu::renderHeaderWithMenu();
         			View::render('users/editUser', $data, $error);
