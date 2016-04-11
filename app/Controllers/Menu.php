@@ -7,15 +7,16 @@ use \core\view,
 
 class Menu extends Controller
 {
-	public function renderHeaderWithMenu()
+	public function renderHeaderWithMenu($error = '')
 	{
 		$_userModel = new \App\Models\User();
 		$menu = new \App\Controllers\menu();
-
+		$data['error'] = $error;
 		if(Session::get('loggedin'))
 		{
 			$data['sessionSet'] = true;
 			$data['fullname'] = $_userModel->getFullname(Session::get('userID'));
+			$data['userID'] = Session::get('userID');
 
 			$data['menu'] = $menu->getMenuForUser($_userModel->getRole(Session::get('userID')));
         /*$data['menu'] = array
@@ -27,7 +28,7 @@ class Menu extends Controller
 		{
        	 	$data['menu'] = $data['menu'] = $menu->getMenuForUser($_userModel->getRole(0));
 		}
-		echo $_userModel->getRole($userID);
+		//echo $_userModel->getRole($userID);
 		View::renderTemplate('header', $data);
 
 	}
@@ -58,4 +59,5 @@ class Menu extends Controller
 		}
 
 	}
+
 }

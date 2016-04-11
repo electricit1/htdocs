@@ -16,15 +16,14 @@ class Welcome extends Controller
 
     public function index()
     {
-        $data['title'] = $this->language->get('welcomeText');
-        $data['welcomeMessage'] = $this->language->get('welcomeMessage');
-        $data['ElementyMenu'] = $this->language->get('ElementyMenu');
+        $data['title'] = 'Strona główna';
+        if(isset($_POST['error']))
+        {
+            $error =$_POST['error'];
+        }
 
-        $data['menu'] = array
-        (
-            array('link' => '\'#\'', 'val' => 'cos')
-        );
-        Menu::renderHeaderWithMenu();
+
+        Menu::renderHeaderWithMenu($error);
         //View::renderTemplate('header', $data);
         View::render('Welcome/Welcome', $data);
         View::renderTemplate('footer', $data);

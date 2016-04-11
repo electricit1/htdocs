@@ -125,6 +125,7 @@ class Form
         $o .= (isset($params['required']))     ? " required='required'"                      : '';
         $o .= (isset($params['autocomplete'])) ? " autocomplete='{$params['autocomplete']}'" : '';
         $o .= (isset($params['autofocus'])) ? " autofocus"                                   : '';
+        $o .= (isset($params['pattern'])) ? " pattern={$params['pattern']}"                  : '';
         $o .= " />\n";
         return $o;
     }

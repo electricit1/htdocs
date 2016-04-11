@@ -33,7 +33,6 @@ class Auth extends Controller {
 			}
 			if(!$error)
 			{
-				Session::init();
 				Session::set('loggedin',true);
 				Session::set('userID', $this->_model->getID($username));
 				Url::redirect();

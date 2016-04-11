@@ -9,18 +9,11 @@
     Assets::css([
         'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
         Url::templatePath().'css/style.css',
-        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css',
+        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
         '../Templates/Default/Assets/css/style.css'
     ]);
     echo $css; //place to pass data / plugable hook zone
-    ?>
-    <style>
-    .container-fluid{
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    </style>
+    ?> 
 </head>
 <body>
 <!--<?php echo $afterBody; //place to pass data / plugable hook zone?>-->
@@ -48,7 +41,7 @@
       <ul class="nav navbar-nav navbar-right">
         <?php 
         if($data['sessionSet']){
-          echo "<li><a href=\"#\"><span class=\"glyphicon glyphicon-user\"></span> $data[fullname]</a></li>";
+          echo "<li><a href='/user/edit/$data[userID]'><span class=\"glyphicon glyphicon-user\"></span> $data[fullname]</a></li>";
           echo "<li><a href=\"/logout\"><span class=\"glyphicon glyphicon-log-out\"></span> Wyloguj się </a></li>";
         }
         else{
@@ -62,6 +55,7 @@
 </div>
 
 <div class="row" style="padding:10px;">
+  <?php if($data['error'] != '') echo \core\Error::display($data['error']); ?>
 
 
 

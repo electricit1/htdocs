@@ -10,3 +10,5 @@ app/Logs/error.log
 app/Logs/error.log
 *.log
 app/Logs/error.log
+app/Logs/error.log
+*.log
