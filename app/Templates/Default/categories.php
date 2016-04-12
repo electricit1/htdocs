@@ -7,7 +7,7 @@
                     <div class="caption">
                         <h3><?=$value->nazwa?></h3>
                         <p><?=$value->opis?></p>
-                        <p> <a href="kategorie/<?=$value->id?>" class="btn btn-primary">Wazowski ty draniu!</a></p>
+                        <p> <a href="kategorie/<?=$value->id?>" class="btn btn-primary"><?=$data['buttonCategory']?></a></p>
                     </div>
                 </div>
             </div> 

@@ -25,6 +25,7 @@ Router::any('login', 'App\Controllers\Auth@login');
 Router::any('logout', 'App\Controllers\Auth@logout');
 Router::any('kategorie', 'App\Controllers\kategorie@kategorie');
 Router::any('kategorie/(:any)', 'App\Controllers\kategorie@podkategorie');
+Router::any('kategorie/(:any)/(:any)', 'App\Controllers\kategorie@zestawy');
 /** End default routes */
 Router::group('user', function()
 {

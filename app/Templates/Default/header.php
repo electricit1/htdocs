@@ -8,9 +8,11 @@
     echo $meta;//place to pass data / plugable hook zone
     Assets::css([
         'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
-        Url::templatePath().'css/style.css',
         'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
-        '../Templates/Default/Assets/css/style.css'
+        //Url::templatePath().'css/style.css'
+        STYLE.'style.css' 
+        // pierdole, teraz wszystko na stalych zmiennych i na sztywno,a nie ja sie pierdole 2h czemu nie mam jebanego szareego tla >.>
+        // bo ktos zostawil dwie kropki ..
     ]);
     echo $css; //place to pass data / plugable hook zone
     ?> 

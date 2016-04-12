@@ -129,4 +129,12 @@ class View
             }
         }
     }
+
+    public function wczytaj($nazwaTablicy)
+    {
+                // wczytanie przyciskow z Language/Pl/welcome.php
+        $dojscie = new \core\Language();
+        $dojscie->load('Welcome');
+        return $data[$nazwaTablicy] = $dojscie->get($nazwaTablicy);
+    }
 }
