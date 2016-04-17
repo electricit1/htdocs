@@ -23,9 +23,16 @@ Router::any('admin/(:any)(/(:any)(/(:any)(/(:any))))', 'App\Controllers\Demo@tes
 Router::any('test/(:any)', 'App\Controllers\test@wyswietl');
 Router::any('login', 'App\Controllers\Auth@login');
 Router::any('logout', 'App\Controllers\Auth@logout');
+
+
 Router::any('kategorie', 'App\Controllers\kategorie@kategorie');
-Router::any('kategorie/(:any)', 'App\Controllers\kategorie@podkategorie');
-Router::any('kategorie/(:any)/(:any)', 'App\Controllers\kategorie@zestawy');
+Router::any('kategorie/(:num)', 'App\Controllers\kategorie@podkategorie');
+Router::any('kategorie/(:num)/(:num)', 'App\Controllers\kategorie@zestawy');
+Router::any('kategorie/add', 'App\Controllers\kategorie@kategorieAdd');
+
+Router::any('zestaw/edit/(:num)', 'App\Controllers\kategorie@zestawEdit');
+Router::any('zestaw/add', 'App\Controllers\kategorie@zestawAdd');
+
 /** End default routes */
 Router::group('user', function()
 {

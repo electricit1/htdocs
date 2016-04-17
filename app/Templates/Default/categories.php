@@ -13,4 +13,10 @@
             </div> 
         <?php }?>     
     </div>
+    <?php if ($data['userrole']==4) {
+    echo "    
+    <div class=\"text-center\">
+        <a href=\"kategorie/add\" class=\"btn btn-primary active\">Dodaj kategorie</a>    
+    </div>";
+    }?>
 </div>

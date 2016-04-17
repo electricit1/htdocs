@@ -11,6 +11,12 @@
                     </div>
                 </div>
             </div> 
-        <?php }?>     
+        <?php }?>
     </div>
+    <?php if ($data['userrole']==4) {
+    echo " 
+    <div class=\"text-center\">
+            <a href=\"/\" class=\"btn btn-primary active\">Dodaj Podkategorie</a>    
+    </div>";
+    }?> 
 </div>
