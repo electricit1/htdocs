@@ -74,8 +74,25 @@ class category extends \core\model
 	public function lastZestaw() {
 		$data = $this->db->select("SELECT id FROM zestaw ORDER BY id DESC LIMIT 1");
 		return $data;
+	}
+
+	public function addKategoria($table) {
+		$this->db->insert('kategoria',$table);
 	}	
 
+	public function lastKategoria() {
+		$data = $this->db->select("SELECT id FROM kategoria ORDER BY id DESC LIMIT 1");
+		return $data;
+	}
+
+	public function addpodkategoria($table) {
+		$this->db->insert('podkategoria',$table);
+	}	
+
+	public function lastpodkategoria() {
+		$data = $this->db->select("SELECT id FROM podkategoria ORDER BY id DESC LIMIT 1");
+		return $data;
+	}
 }
 
 

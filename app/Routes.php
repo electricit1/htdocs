@@ -29,9 +29,14 @@ Router::any('kategorie', 'App\Controllers\kategorie@kategorie');
 Router::any('kategorie/(:num)', 'App\Controllers\kategorie@podkategorie');
 Router::any('kategorie/(:num)/(:num)', 'App\Controllers\kategorie@zestawy');
 Router::any('kategorie/add', 'App\Controllers\kategorie@kategorieAdd');
+Router::any('kategorie/(:num)/add', 'App\Controllers\kategorie@podkategorieAdd');
 
 Router::any('zestaw/edit/(:num)', 'App\Controllers\kategorie@zestawEdit');
 Router::any('zestaw/add', 'App\Controllers\kategorie@zestawAdd');
+
+Router::any('uprawnienia', 'App\Controllers\uprawnienia@uprawnienia');
+Router::any('uprawnienia/edit/(:num)', 'App\Controllers\uprawnienia@uprawnieniaEdit');
+Router::any('uprawnienia/add', 'App\Controllers\uprawnienia@uprawnieniaAdd');
 
 /** End default routes */
 Router::group('user', function()

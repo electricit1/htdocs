@@ -46,26 +46,9 @@ class kategorie extends Controller {
 
 	public function kategorieAdd()
 	{
-		//Menu::renderHeaderWithMenu();
 		kategorie::renderCategoriesAdd();
 		View::rendertemplate('footer',$data);
 	}
-
-	/*
-	public function renderCategoriesAdd()
-	{
-		$_userModel = new \App\Models\User();
-		$menu = new \App\Controllers\menu();
-		$data['userrole']=$_userModel->getRole(Session::get('userID'));
-    	
-		$_categoryModel = new \App\Models\category();
-		$menu = new \App\Controllers\kategorie();
-
-		View::renderTemplate('categoriesAdd', $data);
-	}
-	*/
-
-
 
 
 	public function podkategorie($param1 = '')
@@ -188,10 +171,13 @@ class kategorie extends Controller {
 			$z2 = $_POST['Zawartosc_zestawu2'];
 			$is = $_POST['Ilosc_slowek'];
 			
-			print_r( array('id' => $_categoryModel->lastZestaw()[0]->id+1,'id_konto' => Session::get('userID'), 'id_jezyk1' => $j1, 'id_jezyk2' => $j2, 'id_podkategoria' => $np,
+			/*print_r( array('id' => $_categoryModel->lastZestaw()[0]->id+1,'id_konto' => Session::get('userID'), 'id_jezyk1' => $j1, 'id_jezyk2' => $j2, 'id_podkategoria' => $np,
 			 'nazwa' => $nz, 'zestaw' => implode(';',array($z1, $z2) ),
 			 'ilosc_slowek' => $is, 'data_edycji' => '\''.date("Y-m-d",time()).'\'' ));
-			$_categoryModel->addZestaw(array('id' => $_categoryModel->lastZestaw()[0]->id+1,'id_konto' => Session::get('userID'), 'id_jezyk1' => $j1, 'id_jezyk2' => $j2, 'id_podkategoria' => $np,
+			 */
+			$_categoryModel->addZestaw(array('id' => $_categoryModel->lastZestaw()[0]->id+1,
+				'id_konto' => Session::get('userID'), 'id_jezyk1' => $j1,
+				 'id_jezyk2' => $j2, 'id_podkategoria' => $np,
 			 'nazwa' => $nz, 'zestaw' => implode(';',array($z1, $z2) ),
 			 'ilosc_slowek' => $is, 'data_edycji' => date("Y-m-d",time()) )
 			);
@@ -215,91 +201,145 @@ class kategorie extends Controller {
 
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	public function renderCategoriesAdd()
     {
-        	if(isset($_FILES["obrazek"]))
+    	$_userModel = new \App\Models\User();
+		$data['userrole']=$_userModel->getRole(Session::get('userID'));
+
+		$_categoryModel = new \App\Models\category();
+		$menu = new \App\Controllers\kategorie();	
+
+    	if(isset($_POST["submit"]))
         	{
+        		$target_dir = $_SERVER['DOCUMENT_ROOT'].'/app/Templates/Default/Assets/images/kategorie/';
+				$uploadOk = 1;
+				$nazwa = str_replace(" ", '', $_FILES["obrazek"]["name"][0]);
+				$target_file = $target_dir . $nazwa;
+				$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
-        	$uploadOk = 1;
-        	$target_dir = "/";
-			$target_file = $target_dir . basename($_FILES["obrazek"]["name"]);
-			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-			
-        	$check = getimagesize($_FILES["obrazek"]["tmp_name"]);
-			if($check !== false) {
-        	//	echo "File is an image - " . $check["mime"] . ".";
-       			$uploadOk = 1;
-    		} else {
-    		//  echo "File is not an image.";
-    		    $uploadOk = 0;
-    		}
+    			$check = getimagesize($_FILES["obrazek"]["tmp_name"][0]);
 
-    		// Check if file already exists
-			if (file_exists($target_file)) {
-    		// echo "Sorry, file already exists.";
-    			$uploadOk = 0;
-			}
-			// Check file size
-			if ($_FILES["obrazek"]["size"] > 500000) {
-    		// echo "Sorry, your file is too large.";
-    			$uploadOk = 0;
-			}
-			// Allow certain file formats
-			if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-			&& $imageFileType != "gif" ) {
-    		// echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-    			$uploadOk = 0;
-			}
-			// Check if $uploadOk is set to 0 by an error
-			if ($uploadOk == 0) {
-    		// echo "Sorry, your file was not uploaded.";
-			// if everything is ok, try to upload file
-			} else {
-    		if (move_uploaded_file($_FILES["obrazek"]["tmp_name"], $target_file)) {
-        	// echo "The file ". basename( $_FILES["obrazek"]["name"]). " has been uploaded.";
-    		} else {
-        	// echo "Sorry, there was an error uploading your file.";
-    		}
-    		}
+    			if($check !== false) 
+    				{$uploadOk = 1;}
+    			else 
+    				{$error[] = "Plik nie jest obrazem.";$uploadOk = 0;}
+				
+				if (file_exists($target_file)) {
+    				$error[] = "Przepraszam, taki plik juz istnieje.";
+    				$uploadOk = 0;
+				}
 
-        		
+				if ($_FILES["obrazek"]["size"][0] > 500000) {
+    				$error[] = "Przepraszam, Plik jest za duzy.";
+    				$uploadOk = 0;
+				}
 
+				if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+    				$error[] = "Przepraszam, pliki tylko w formatach JPG, JPEG, PNG i GIF, a twoj jest typu ".$imageFileType;
+    				$uploadOk = 0;
+				}
 
-        		$nazwa = $_POST['nazwa'];
-        		$opis = $_POST['opis'];
-        		$obrazek = $_POST['obrazek'];
-        		//$this->db->insert('kategoria',array('nazwa' => $nazwa, 'opis' => $opis, 'obrazek' => $obrazek));
-        		//Url::redirect('kategorie');
+				if ($uploadOk == 0) {
+    				$error[] = "Przepraszam, plik nie zostal wyslany.";
+				}
+				else
+				{
+    				if (move_uploaded_file($_FILES['obrazek']['tmp_name'][0],$target_file)) {
+    					
+       					$_categoryModel->addKategoria(array(
+       					'id' => $_categoryModel->lastKategoria()[0]->id+1,
+						'nazwa' => $_POST['nazwa'],
+				 		'opis' => $_POST['opis'], 
+			 			'obrazek' => $nazwa)
+						);
+						Url::redirect('kategorie');
+    				} else {
+        				$error[] = "Przepraszam, Wystapil blad podczas wysylania.";
+    				}
 
+				}
+
+				Menu::renderHeaderWithMenu($error);
+
+	       		View::renderTemplate('categoriesAdd', $data);
 
        		}else{
      
-       		Menu::renderHeaderWithMenu('blad przy wczytywaniu');
-       		//phpinfo();
-       		print_r($_FILES);
+       		Menu::renderHeaderWithMenu();
        		View::renderTemplate('categoriesAdd', $data);
        		}
     }
+
+
+	public function podkategorieAdd($idkategorii)
+    {
+    	$_userModel = new \App\Models\User();
+		$data['userrole']=$_userModel->getRole(Session::get('userID'));
+
+		$_categoryModel = new \App\Models\category();
+		$menu = new \App\Controllers\kategorie();	
+
+    	if(isset($_POST["submit"]))
+        	{
+        		$target_dir = $_SERVER['DOCUMENT_ROOT'].'/app/Templates/Default/Assets/images/podkategorie/';
+				$uploadOk = 1;
+				$nazwa = str_replace(" ", '', $_FILES["obrazek"]["name"][0]);
+				$target_file = $target_dir . $nazwa;
+				$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
+    			$check = getimagesize($_FILES["obrazek"]["tmp_name"][0]);
+
+    			if($check !== false) 
+    				{$uploadOk = 1;}
+    			else 
+    				{$error[] = "Plik nie jest obrazem.";$uploadOk = 0;}
+				
+				if (file_exists($target_file)) {
+    				$error[] = "Przepraszam, taki plik juz istnieje.";
+    				$uploadOk = 0;
+				}
+
+				if ($_FILES["obrazek"]["size"][0] > 500000) {
+    				$error[] = "Przepraszam, Plik jest za duzy.";
+    				$uploadOk = 0;
+				}
+
+				if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+    				$error[] = "Przepraszam, pliki tylko w formatach JPG, JPEG, PNG i GIF, a twoj jest typu ".$imageFileType;
+    				$uploadOk = 0;
+				}
+
+				if ($uploadOk == 0) {
+    				$error[] = "Przepraszam, plik nie zostal wyslany.";
+				}
+				else
+				{
+    				if (move_uploaded_file($_FILES['obrazek']['tmp_name'][0],$target_file)) {
+    					
+       					$_categoryModel->addpodkategoria(array(
+       					'id' => $_categoryModel->lastpodkategoria()[0]->id+1,
+       					'id_kategoria' => $idkategorii,
+						'nazwa' => $_POST['nazwa'],
+				 		'opis' => $_POST['opis'], 
+			 			'obrazek' => $nazwa)
+						);
+						Url::redirect('kategorie/'.$idkategorii);
+    				} else {
+        				$error[] = "Przepraszam, Wystapil blad podczas wysylania.";
+    				}
+
+				}
+
+				Menu::renderHeaderWithMenu($error);
+
+	       		View::renderTemplate('subcategoriesAdd', $data);
+
+       		}else{
+     
+       		Menu::renderHeaderWithMenu();
+       		View::renderTemplate('subcategoriesAdd', $data);
+       		}
+    }
+
 
 }

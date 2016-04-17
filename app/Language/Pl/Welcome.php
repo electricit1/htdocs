@@ -42,7 +42,8 @@ return array(
 	'menuadmin' => array(
 		array('link' => '/kategorie', 'val' => 'Kategorie'),
 		array('link' => '/zestaw', 'val' => 'Zestawy'),
-		array('link' => '/user/all', 'val' => 'Zarzadzaj uzytkownikami')),
+		array('link' => '/user/all', 'val' => 'Zarzadzaj uzytkownikami'),
+		array('link' => '/uprawnienia', 'val' => 'Zarzadzaj uprawnieniami')),
 	'nikt' => array(
 		array('link' => '/', 'val' => 'Strona Główna'),
 		array('link' => '/kategorie', 'val' => 'Kategorie'))
