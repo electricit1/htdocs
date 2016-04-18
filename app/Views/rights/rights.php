@@ -21,6 +21,6 @@
 		</tbody>
 	</table>
 	<div class="text-center">
-		<a href="/uprawnienia/add" class="btn btn-primary active">Dodaj Zestaw</a>
+		<a href="/uprawnienia/add" class="btn btn-primary active">Nadaj Uprawnienia</a>
 	</div>
 </div>

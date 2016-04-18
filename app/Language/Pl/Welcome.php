@@ -21,32 +21,32 @@ return array(
 	// Buttons
 	'openSubpage' => 'Otwórz podstronę',
 	'backHome' => 'Strona główna',
-	'buttonCategory' => 'Zobacz Podkategorie',
-	'buttonSubCategory' => 'Zobacz zestawy',
+	'buttonCategory' => 'Podkategorie',
+	'buttonSubCategory' => 'Zestawy',
 
 	'menuuczen' => array(
 		array('link' => '/', 'val' => 'Strona Główna'),
-		array('link' => '/kategorie', 'val' => 'Kategorie'),
+		array('link' => '/kategorie/all', 'val' => 'Kategorie'),
 		array('link' => '/wyniki', 'val' => 'Wyniki'),
-		array('link' => '/zestaw', 'val' => 'Twoje Zestawy')),
+		array('link' => '/zestaw/all', 'val' => 'Twoje Zestawy')),
 	'menuredaktor' => array(
 		array('link' => '/', 'val' => 'Strona Główna'),
-		array('link' => '/kategorie', 'val' => 'Kategorie'),
+		array('link' => '/kategorie/all', 'val' => 'Kategorie'),
 		array('link' => '/wyniki', 'val' => 'Wyniki'),
-		array('link' => '/zestaw', 'val' => 'Zestawy')),
+		array('link' => '/zestaw/all', 'val' => 'Zestawy')),
 	'menusuperredaktor' => array(
 		array('link' => '/', 'val' => 'Strona Główna'),
-		array('link' => '/kategorie', 'val' => 'Kategorie'),
+		array('link' => '/kategorie/all', 'val' => 'Kategorie'),
 		array('link' => '/wyniki', 'val' => 'Wyniki'),
-		array('link' => '/zestaw', 'val' => 'Zestawy')),
+		array('link' => '/zestaw/all', 'val' => 'Zestawy')),
 	'menuadmin' => array(
-		array('link' => '/kategorie', 'val' => 'Kategorie'),
-		array('link' => '/zestaw', 'val' => 'Zestawy'),
+		array('link' => '/kategorie/all', 'val' => 'Kategorie'),
+		array('link' => '/zestaw/all', 'val' => 'Zestawy'),
 		array('link' => '/user/all', 'val' => 'Zarzadzaj uzytkownikami'),
-		array('link' => '/uprawnienia', 'val' => 'Zarzadzaj uprawnieniami')),
+		array('link' => '/uprawnienia/all', 'val' => 'Zarzadzaj uprawnieniami')),
 	'nikt' => array(
 		array('link' => '/', 'val' => 'Strona Główna'),
-		array('link' => '/kategorie', 'val' => 'Kategorie'))
+		array('link' => '/kategorie/all', 'val' => 'Kategorie'))
 
 
 );

@@ -13,8 +13,8 @@
 				<th>Data edycji</th>	
 				<th><?php foreach ($data['zestawy'] as $value){  
 					if ($data['userrole']==4 or
-						Session::get('userID')==$value->id or 
-						in_array((object) array(id_podkategoria => $value->id_podkategoria), $data['uprawnienia'])) 
+						Session::get('userID')==$value->id_konto or 
+						in_array((object) array(id_podkategoria => $value->id_podkategoria), $data['uprawnienia']))
 					{echo "Edycja";break;} } 
 					// break bo tu sie wywoluje tylko naglowek, a zestawow moze byc kilka i wtedy napis edytuj sie duplikuje
 					?>
@@ -35,8 +35,8 @@
 				<td><?=$value->{'Data edycji'};?></td>
 				<td><?php
 				if ($data['userrole']==4 or
-					Session::get('userID')==$value->id or 
-					in_array((object) array(id_podkategoria => $value->id_podkategoria), $data['uprawnienia'])) 
+					Session::get('userID')==$value->id_konto or 
+					in_array((object) array(id_podkategoria => $value->id_podkategoria), $data['uprawnienia']))
 				 {echo "<a class=\"glyphicon glyphicon-pencil\" href=\"/zestaw/edit/$value->id\"></a>";}
 				?></td>
 			</tr>

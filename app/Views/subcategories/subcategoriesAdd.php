@@ -19,7 +19,6 @@ use \helpers\form,
   margin-bottom: 15px;
 }
 </style>
-<?php echo Error::display($error); ?>
 
 <h2 class="form-heading">Dodawanie podkategorii</h2>
 <?php echo "<form method='post' class='form-signin' enctype='multipart/form-data'>";?>

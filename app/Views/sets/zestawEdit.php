@@ -21,7 +21,7 @@ use \helpers\form,
 </style>
 <?php 
 $zestaw=explode(';', $data['zestaw'][0]->{'Zawartosc zestawu'});
-echo Error::display($error); ?>
+?>
 
 <?php echo Form::open(array('method' => 'post', 'class' => 'form-signin'));?>
 <h2 class="form-heading">Edycja zestawu</h2>

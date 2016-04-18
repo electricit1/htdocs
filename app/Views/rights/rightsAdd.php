@@ -19,9 +19,6 @@ use \helpers\form,
 	margin-bottom: 15px;
 }
 </style>
-<?php 
-
-echo Error::display($error); ?>
 
 <?php echo Form::open(array('method' => 'post', 'class' => 'form-signin'));?>
 <h2 class="form-heading">Edycja uprawnien</h2>

@@ -7,7 +7,7 @@
                     <div class="caption">
                         <h3><?=$value->nazwa?></h3>
                         <p><?=$value->opis?></p>
-                        <p> <a href="/kategorie/<?=$value->id_kategoria?>/<?=$value->id?>" class="btn btn-primary"><?=$data['buttonSubCategory']?></a></p>
+                        <p> <a href="/zestaw/<?=$value->id_kategoria?>/<?=$value->id?>" class="btn btn-primary"><?=$data['buttonSubCategory']?></a></p>
                     </div>
                 </div>
             </div> 
@@ -16,7 +16,7 @@
     <?php if ($data['userrole']==4) {
     echo " 
     <div class=\"text-center\">
-            <a href=\"/kategorie/".$value->id_kategoria."/add\" class=\"btn btn-primary active\">Dodaj Podkategorie</a>    
+            <a href=\"/podkategorie/".$value->id_kategoria."/add\" class=\"btn btn-primary active\">Dodaj Podkategorie</a>    
     </div>";
     }?> 
 </div>

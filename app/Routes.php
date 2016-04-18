@@ -24,19 +24,36 @@ Router::any('test/(:any)', 'App\Controllers\test@wyswietl');
 Router::any('login', 'App\Controllers\Auth@login');
 Router::any('logout', 'App\Controllers\Auth@logout');
 
+//kategorie
+Router::group('kategorie', function()
+{
+	Router::any('all', 'App\Controllers\kategorie@kategorie');
+	Router::any('add', 'App\Controllers\kategorie@kategorieAdd');
+	Router::any('(:num)/edit', 'App\Controllers\kategorie@kategorieEdit'); // zrobic
+});
+//podkategorie
+Router::group('podkategorie', function()
+{
+	Router::any('(:num)', 'App\Controllers\podkategorie@podkategorie');
+	Router::any('(:num)/add', 'App\Controllers\podkategorie@podkategorieAdd');
+	Router::any('(:num)/(:num)/edit', 'App\Controllers\podkategorie@podkategorieEdit'); // zrobic
+});
+//zestaw
+Router::group('zestaw', function()
+{
+	Router::any('(:num)/(:num)', 'App\Controllers\zestaw@zestawy');
+	Router::any('edit/(:num)', 'App\Controllers\zestaw@zestawEdit');
+	Router::any('add', 'App\Controllers\zestaw@zestawAdd');
+	Router::any('all', 'App\Controllers\zestaw@zestawAll'); // zrobic
+});
 
-Router::any('kategorie', 'App\Controllers\kategorie@kategorie');
-Router::any('kategorie/(:num)', 'App\Controllers\kategorie@podkategorie');
-Router::any('kategorie/(:num)/(:num)', 'App\Controllers\kategorie@zestawy');
-Router::any('kategorie/add', 'App\Controllers\kategorie@kategorieAdd');
-Router::any('kategorie/(:num)/add', 'App\Controllers\kategorie@podkategorieAdd');
-
-Router::any('zestaw/edit/(:num)', 'App\Controllers\kategorie@zestawEdit');
-Router::any('zestaw/add', 'App\Controllers\kategorie@zestawAdd');
-
-Router::any('uprawnienia', 'App\Controllers\uprawnienia@uprawnienia');
-Router::any('uprawnienia/edit/(:num)', 'App\Controllers\uprawnienia@uprawnieniaEdit');
-Router::any('uprawnienia/add', 'App\Controllers\uprawnienia@uprawnieniaAdd');
+//uprawnienia
+Router::group('uprawnienia', function()
+{
+	Router::any('all', 'App\Controllers\uprawnienia@uprawnienia');
+	Router::any('edit/(:num)', 'App\Controllers\uprawnienia@uprawnieniaEdit');
+	Router::any('add', 'App\Controllers\uprawnienia@uprawnieniaAdd');
+});
 
 /** End default routes */
 Router::group('user', function()
