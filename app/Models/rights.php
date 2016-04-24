@@ -9,7 +9,7 @@ class rights extends \core\model
 	}
 
 	public function getLogins() {
-		$data = $this->db->select("SELECT id,login from konto");
+		$data = $this->db->select("SELECT ds.id,ds.login from konto ds inner join rola zx on ds.id_rola=zx.id where zx.id=2 or zx.id=3");
 		return $data;
 	}
 
@@ -36,6 +36,11 @@ class rights extends \core\model
 	public function insertRights($table) {
 		$data = $this->db->insert('uprawnienia',$table);
 		return $data;
+	}
+
+	public function getRightsID($id) {
+		$data = $this->db->select("SELECT id from uprawnienia where id=".$id);
+		return $data[0];
 	}
 
 

@@ -16,11 +16,11 @@ $router = Router::getInstance();
 /** Define static routes. */
 
 // Default Routing
-Router::any('', 'App\Controllers\Welcome@index');
+Router::any('', 'App\Controllers\kategorie@kategorie');
 Router::post('err/(:num)', 'App\Controllers\Welcome@index');
-Router::any('subpage', 'App\Controllers\Welcome@subPage');
-Router::any('admin/(:any)(/(:any)(/(:any)(/(:any))))', 'App\Controllers\Demo@test');
-Router::any('test/(:any)', 'App\Controllers\test@wyswietl');
+//Router::any('subpage', 'App\Controllers\Welcome@subPage');
+//Router::any('admin/(:any)(/(:any)(/(:any)(/(:any))))', 'App\Controllers\Demo@test');
+//Router::any('test/(:any)', 'App\Controllers\test@wyswietl');
 Router::any('login', 'App\Controllers\Auth@login');
 Router::any('logout', 'App\Controllers\Auth@logout');
 
@@ -34,25 +34,43 @@ Router::group('kategorie', function()
 //podkategorie
 Router::group('podkategorie', function()
 {
-	Router::any('(:num)', 'App\Controllers\podkategorie@podkategorie');
-	Router::any('(:num)/add', 'App\Controllers\podkategorie@podkategorieAdd');
-	Router::any('(:num)/(:num)/edit', 'App\Controllers\podkategorie@podkategorieEdit'); // zrobic
+	Router::any('(:num)', 'App\Controllers\podkategorie@podkategorie'); //id kategorii
+	Router::any('(:num)/add', 'App\Controllers\podkategorie@podkategorieAdd'); // id kategorii
+	Router::any('(:num)/edit', 'App\Controllers\podkategorie@podkategorieEdit'); // id podkategorii zrobic
+
+	// img // tutaj cos poprawic zeby to mialo rece i nogi i jakies zabezpieczenia przy wywoloywaniu
+	// zrobic zliczanie slow, w selekcie zrobic nazwa, pod tym obrazek i oddzielone linia
+	// zmienic w uprawnieniach ze do wyboru jest superredaktor albo redaktor
 });
 //zestaw
 Router::group('zestaw', function()
 {
-	Router::any('(:num)/(:num)', 'App\Controllers\zestaw@zestawy');
-	Router::any('edit/(:num)', 'App\Controllers\zestaw@zestawEdit');
+	Router::any('all', 'App\Controllers\zestaw@zestawAll'); 
+	Router::any('(:num)', 'App\Controllers\zestaw@zestawy'); // id podkategorii
 	Router::any('add', 'App\Controllers\zestaw@zestawAdd');
-	Router::any('all', 'App\Controllers\zestaw@zestawAll'); // zrobic
+	Router::any('(:num)/edit', 'App\Controllers\zestaw@zestawEdit'); // id zestau
 });
 
 //uprawnienia
 Router::group('uprawnienia', function()
 {
 	Router::any('all', 'App\Controllers\uprawnienia@uprawnienia');
-	Router::any('edit/(:num)', 'App\Controllers\uprawnienia@uprawnieniaEdit');
+	Router::any('(:num)/edit', 'App\Controllers\uprawnienia@uprawnieniaEdit'); //id uprawnienia
 	Router::any('add', 'App\Controllers\uprawnienia@uprawnieniaAdd');
+});
+
+Router::group('wiedza', function()
+{
+	Router::any('nauka/(:num)', 'App\Controllers\wiedza@wiedzaNaukaWyborJezyka'); //id zestawu
+	Router::any('nauka/(:num)/(:num)/(:num)', 'App\Controllers\wiedza@wiedzaNauka'); //id zestawu, // tryb {0 - jedna ,1 - wiele}, // wybor jezyka {0,1} 
+	Router::any('spr/(:num)', 'App\Controllers\wiedza@wiedzaSprWyborJezyka'); //id zestawu
+	Router::any('spr/(:num)/(:num)', 'App\Controllers\wiedza@wiedzaSpr'); //id zestawu, // wybor jezyka {0,1}
+});
+
+Router::group('wynik', function()
+{
+	Router::any('/all', 'App\Controllers\wynik@wynik'); // admin bedzie mial wglad do wszystkich
+	Router::any('/graf', 'App\Controllers\wynik@wynikGraf'); // no tutaj juz nie stety nie : C #sublime rlz xd
 });
 
 /** End default routes */

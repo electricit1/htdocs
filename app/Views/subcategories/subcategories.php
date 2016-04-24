@@ -7,7 +7,14 @@
                     <div class="caption">
                         <h3><?=$value->nazwa?></h3>
                         <p><?=$value->opis?></p>
-                        <p> <a href="/zestaw/<?=$value->id_kategoria?>/<?=$value->id?>" class="btn btn-primary"><?=$data['buttonSubCategory']?></a></p>
+                        <p class="btn-group btn-group-justified"> 
+                            <a href="/zestaw/<?=$value->id?>" class="btn btn-primary"><?=$data['buttonSubCategory']?></a>
+                            <?php 
+                            if ($data['userrole']==4) {
+                                echo "<a href='/podkategorie/$value->id/edit' class='btn btn-primary'>Edytuj</a>";
+                            }
+                            ?>
+                        </p>
                     </div>
                 </div>
             </div> 

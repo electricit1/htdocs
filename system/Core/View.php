@@ -137,4 +137,11 @@ class View
         $dojscie->load('Welcome');
         return $data[$nazwaTablicy] = $dojscie->get($nazwaTablicy);
     }
+
+    public function antysql($string){
+        // anty sql injection, usuwa cudzyslowia, apostrofy i biale znakie przed i za stringiem
+        $szuka = array("'","\"");
+        $zamieniana   = array("");
+        return trim(str_replace($szuka, $zamieniana, $string));
+    }
 }

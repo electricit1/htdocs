@@ -25,18 +25,33 @@ label input[type=radio] {
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
- 
+    
 
-<h2 class="form-heading">Dodawanie kategorii</h2>
+
+<h2 class="form-heading">Edytowanie kategorii</h2>
 <?php echo "<form method='post' class='form-signin' enctype='multipart/form-data'>";?>
 <div class="input-group"> 
   <span class="input-group-addon">Nazwa</span>
-<?php echo Form::input(array('name' => 'nazwa', 'placeholder' => 'Nazwa', 'class' => 'form-control','required' => true));?>  
+<?php echo Form::input(array('name' => 'nazwa', 'placeholder' => 'Nazwa', 'class' => 'form-control','required' => true, 'value' => $data[aktualne][0]->nazwa));?>  
 </div>
 <div class="input-group"> 
   <span class="input-group-addon">Opis</span>
-<?php echo Form::input(array('name' =>'opis', 'placeholder' => 'Opis', 'class' => 'form-control','required' => true));?>  
+<?php echo Form::input(array('name' =>'opis', 'placeholder' => 'Opis', 'class' => 'form-control','required' => true, 'value' => $data[aktualne][0]->opis));?>  
 </div>
+
+      
+<?php echo "<div class='input-group'>
+    <span class='input-group-addon'>Widocznosc</span>
+  <select name='widocznosc' class='form-control' required>";
+
+  foreach ($data['widocznosc'] as $value) { 
+    $ten='';
+    if ($value==1) {$odp='tak';}else{$odp='nie';}
+    if ($value==$data[aktualne][0]->widocznosc) {$ten='selected';}    
+    echo "<option value='".$value."' ".$ten.">".$odp."</option> "; 
+  }
+
+  echo "</select></div>";?>
     
 <div class="input-group input-group-custom"> 
   <span class="input-group-addon input-group-custom2">Obraz</span>
@@ -59,7 +74,13 @@ label input[type=radio] {
        <select name='obrazek1' class='form-control' required>"; 
 
        foreach ($data['obrazki'] as $key => $value) {  
-           echo "<option value='".$value."'>".$value."</option>"; 
+         if ($value==$data['aktualne'][0]->obrazek) {
+           echo "
+           <option value='".$value."' selected>".$value."</option> "; 
+         }else{
+           echo "<option value='".$value."'>".$value."</option> 
+          "; 
+         }
        } 
        echo "</select></div>";?>
       </div>
@@ -93,9 +114,17 @@ label input[type=radio] {
 </script>
 
 
+
+
+
+
+
 <div class="btn-group btn-group-justified">
   <div class="btn-group">
-<?php echo Form::input(array('type' => 'submit', 'name' => 'submit', 'value' => 'Dodaj', 'class' => 'btn btn-lg btn-primary btn-block' ));?>
+    <?php echo Form::input(array('type' => 'submit', 'name' => 'submit', 'value' => 'Edytuj', 'class' => 'btn btn-lg btn-primary btn-block' ));?>
+  </div>
+  <div class="btn-group">
+    <?php echo Form::input(array('type' => 'submit', 'name' => 'delete', 'value' => 'Usun', 'class' => 'btn btn-lg btn-primary btn-block' ));?>
   </div>
 </div>
 <?php echo "</form>";?>

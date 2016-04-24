@@ -27,7 +27,7 @@ use \helpers\form,
 	<select name='login' class='form-control' required>";
 
 	foreach ($data['login'] as $value => $key) {	
-			echo "<option value='".$key->id."'>".$key->login."(".$key->id.")</option> ";	
+			echo "<option value='".$key->id."'>".$key->login."</option> ";	
 	}
 	echo "</select></div>";?>
 

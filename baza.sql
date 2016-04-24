@@ -9,17 +9,19 @@ drop table wynik CASCADE;
 
 
 CREATE TABLE kategoria(
-   id			  SERIAL PRIMARY KEY NOT NULL,
-   nazwa		TEXT NOT NULL,
-   opis	    TEXT NOT NULL,
-   obrazek	TEXT NOT NULL
+   id			     SERIAL PRIMARY KEY NOT NULL,
+   nazwa		     VARCHAR(50)  NOT NULL,
+   opis	        VARCHAR(200) NOT NULL,
+   widocznosc    INT NOT NULL,
+   obrazek	     VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE podkategoria(
    id           SERIAL PRIMARY KEY NOT NULL,
    id_kategoria INT NOT NULL REFERENCES kategoria (id) ON UPDATE CASCADE ON DELETE CASCADE,
-   nazwa        VARCHAR(50) UNIQUE NOT NULL,
+   nazwa        VARCHAR(50)  NOT NULL,
    opis         VARCHAR(200) NOT NULL,
+   widocznosc   INT NOT NULL,
    obrazek      VARCHAR(100) NOT NULL
 );
 
@@ -59,7 +61,8 @@ CREATE TABLE zestaw(
    nazwa               VARCHAR(30) NOT NULL,
    zestaw              TEXT NOT NULL,
    ilosc_slowek        INT,
-   data_edycji         DATE NOT NULL
+   data_edycji         DATE NOT NULL,
+   widocznosc          INT NOT NULL
 );
 
 CREATE TABLE wynik(
@@ -72,37 +75,14 @@ CREATE TABLE wynik(
 
 
 
+INSERT INTO `jezyk` (`id`, `nazwa`) VALUES
+(2, 'angielski'),
+(1, 'polski');
 
-INSERT INTO `kategoria` (`id`, `nazwa`, `opis`, `obrazek`) VALUES
-(1, 'Muzyka', 'Znane na calym swiecie', 'soundnote.png'),
-(2, 'Narzedzia', 'Codziennie uzywane', 'tools.png'),
-(3, 'Geografia', 'Swiat', 'world.png');
-
-
-INSERT INTO `podkategoria` (`id`, `id_kategoria`, `nazwa`, `opis`, `obrazek`) VALUES
-(1, 1, 'Rock', 'Instrumenty zwiazane z rockiem', 'electricgituar.png'),
-(2, 1, 'Pop', 'Gwiazdy zwiazane z rokciem', 'pop.png'),
-(3, 2, 'Budowlane', 'Uzywane na budowie', 'bulidhelmet.png'),
-(4, 2, 'Ogrodowe', 'Do pielegnacji ogrodu', 'rake.png'),
-(5, 3, 'Afryka', 'Rzeki Afryki', 'africa.png'),
-(6, 3, 'Europa', 'Miasta Europy', 'europe.png');
-
-insert into jezyk values (1,'polski');
-insert into jezyk values (2,'angielski');
-
-insert into rola values (4,'admin','jedyny na obiekcie');
-insert into rola values (3,'super redaktor','poprawia po zwyklym pajacu');
-insert into rola values (2,'redaktor','niby cos tam robi');
-insert into rola values (1,'uczen','wszystko przez tego leszcza');
-
-insert into konto values (1,1,'Radek','Golunski','jakisfrajer@koscierzyna.pl','radekmaster1','$2y$10$ONLqsb2jCLwCfd/.ozFL5OMqrgSy5meWuGyjGn1/i2EwCivEGZ5Iu');
-
-insert into uprawnienia values (1,1,1);
-
-insert into zestaw values (1,1,1,2,1,'Instrumenty','gitara;gituar','1',current_date);
-
-insert into wynik values (1,1,1,current_date,9.5);
-
+INSERT INTO `kategoria` (`id`, `nazwa`, `opis`, `widocznosc`, `obrazek`) VALUES
+(1, 'Muzyka', 'Znane na calym swiecie', 1, 'soundnote.png'),
+(2, 'Narzedzia', 'Codziennie uzywane', 1, 'tools.png'),
+(3, 'Geografia', 'Swiat', 1, 'world.png');
 
 INSERT INTO `konto` (`id`, `id_rola`, `imie`, `nazwisko`, `email`, `login`, `haslo`) VALUES
 (1, 1, 'radix', 'uczen', 'radix@master.pl', 'uczen', '$2y$10$ONLqsb2jCLwCfd/.ozFL5OMqrgSy5meWuGyjGn1/i2EwCivEGZ5Iu'),
@@ -110,3 +90,28 @@ INSERT INTO `konto` (`id`, `id_rola`, `imie`, `nazwisko`, `email`, `login`, `has
 (3, 2, 'redaktor', 'sort', 'radix@master.pl', 'redaktor', '$2y$10$ONLqsb2jCLwCfd/.ozFL5OMqrgSy5meWuGyjGn1/i2EwCivEGZ5Iu'),
 (4, 3, 'superredaktor', 'sort', 'radix@master.pl', 'superredaktor', '$2y$10$ONLqsb2jCLwCfd/.ozFL5OMqrgSy5meWuGyjGn1/i2EwCivEGZ5Iu');
 
+INSERT INTO `podkategoria` (`id`, `id_kategoria`, `nazwa`, `opis`, `widocznosc`, `obrazek`) VALUES
+(1, 1, 'Rock', 'Instrumenty zwiazane z rockiem', 1, 'electricgituar.png'),
+(2, 1, 'Pop', 'Gwiazdy zwiazane z rokciem', 1, 'pop.png'),
+(3, 2, 'Budowlane', 'Uzywane na budowie', 1, 'bulidhelmet.png'),
+(4, 2, 'Ogrodowe', 'Do pielegnacji ogrodu', 1, 'rake.png'),
+(5, 3, 'Afryka', 'Rzeki Afryki', 1, 'africa.png'),
+(6, 3, 'Europa', 'Miasta Europy', 1, 'europe.png');
+
+INSERT INTO `rola` (`id`, `nazwa`, `opis`) VALUES
+(1, 'uczen', 'wszystko przez tego leszcza'),
+(2, 'redaktor', 'niby cos tam robi'),
+(3, 'super redaktor', 'poprawia po zwyklym pajacu'),
+(4, 'admin', 'jedyny na obiekcie');
+
+INSERT INTO `uprawnienia` (`id`, `id_konto`, `id_podkategoria`) VALUES
+(1, 1, 3),
+(2, 3, 1),
+(3, 3, 2);
+
+INSERT INTO `zestaw` (`id`, `id_konto`, `id_jezyk1`, `id_jezyk2`, `id_podkategoria`, `nazwa`, `zestaw`, `ilosc_slowek`, `data_edycji`, `widocznosc`) VALUES
+(2, 2, 1, 2, 2, 'Instrumenty', 'mikrofon;microphone\r\nelo; siemanko\r\nzestaw; set\r\nedzio;miecio\r\njeste;motyle', 5, '2016-04-10', 1),
+(3, 1, 1, 2, 1, 'Gwiazdy', 'hania montana, kotek;hannah montanah', 1, '2016-04-10', 1),
+(4, 1, 1, 2, 2, 'Naglosnienie', 'subufer;subufer', 1, '2016-04-10', 1),
+(5, 2, 1, 2, 1, 'ogolnie', 'fajnie;nice', 1, '2016-04-17', 1),
+(6, 2, 1, 2, 2, 'cos', 'test, test3;test2', 1, '2016-04-17', 1);

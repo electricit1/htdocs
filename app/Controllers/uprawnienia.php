@@ -17,7 +17,7 @@ class uprawnienia extends Controller {
 	public function uprawnienia()
 	{
 		$_userModel = new \App\Models\User();
-		$_categoryModel = new \App\Models\rights();
+		$_rightsModel = new \App\Models\rights();
 		
 		if ($_userModel->getRole(Session::get('userID'))==4 and Session::get('loggedin')){
 			Menu::renderHeaderWithMenu();
@@ -29,12 +29,17 @@ class uprawnienia extends Controller {
 	}
 
 
-	public function uprawnieniaEdit($id)
+	public function uprawnieniaEdit($id = 0)
 	{
 		$_userModel = new \App\Models\User();
-		$_categoryModel = new \App\Models\rights();
+		$_rightsModel = new \App\Models\rights();
 
-		if (isset($id) and Session::get('loggedin') and $_userModel->getRole(Session::get('userID'))==4){
+		$data['istniejaceUprawnienia'] = $_rightsModel->getRightsID($id);
+		
+		if ($id>=1 and 
+			Session::get('loggedin') and 
+			$_userModel->getRole(Session::get('userID'))==4 and 
+			$id==$data['istniejaceUprawnienia']->id){
 			Menu::renderHeaderWithMenu();
 			uprawnienia::renderuprawnieniaEdit($id);
 		}else{
@@ -47,7 +52,7 @@ class uprawnienia extends Controller {
 	public function uprawnieniaAdd()
 	{
 		$_userModel = new \App\Models\User();
-		$_categoryModel = new \App\Models\rights();
+		$_rightsModel = new \App\Models\rights();
 		
 		if (Session::get('loggedin') and $_userModel->getRole(Session::get('userID'))==4) {
 			Menu::renderHeaderWithMenu();
@@ -62,9 +67,9 @@ class uprawnienia extends Controller {
 	public function renderuprawnienia()
 	{
 		$_userModel = new \App\Models\User();
-		$_categoryModel = new \App\Models\rights();
+		$_rightsModel = new \App\Models\rights();
 		
-		$data['uprawnienia'] = $_categoryModel->getrights();
+		$data['uprawnienia'] = $_rightsModel->getrights();
 				
 		View::render('rights/rights', $data);
 	}
@@ -72,36 +77,37 @@ class uprawnienia extends Controller {
 	public function renderuprawnieniaEdit($id)
 	{
 		$_userModel = new \App\Models\User();
-		$_categoryModel = new \App\Models\rights();
+		$_rightsModel = new \App\Models\rights();
 		
-		$data['uprawnienia'] = $_categoryModel->getrights();
+		$data['uprawnienia'] = $_rightsModel->getrights();
 				
 		if(isset($_POST['submit'])){
-        	$lg = $_POST['login'];
-        	$pk = $_POST['podkategoria'];
-      				
-			$_categoryModel->updateRights(
+			// #SQL INJECTION MUCH FUN WOW
+			$n1 = view::antysql($_POST['login']);
+			$n2 = view::antysql($_POST['podkategoria']);
+
+			$_rightsModel->updateRights(
 				array(
-					'id_konto' => $lg,
-					'id_podkategoria' => $pk
+					'id_konto' => $n1,
+					'id_podkategoria' => $n2
 					), 
 				array(
 					'id' => $id)
 				);
-        	Url::redirect('uprawnienia');
+        	Url::redirect('uprawnienia/all');
 
         }elseif(isset($_POST['delete'])){
-        	$_categoryModel->deleteRights(
+        	$_rightsModel->deleteRights(
         		array(
         			'id' => $id
         			)
         		);
-        	Url::redirect('uprawnienia');
+        	Url::redirect('uprawnienia/all');
         		
         }else{
-			$data['login'] = $_categoryModel->getLogins();
-			$data['subcategories'] = $_categoryModel->getSubcategory();
-			$data['aktualne'] = $_categoryModel->getRight($id);
+			$data['login'] = $_rightsModel->getLogins();
+			$data['subcategories'] = $_rightsModel->getSubcategory();
+			$data['aktualne'] = $_rightsModel->getRight($id);
 			View::render('rights/rightsEdit', $data);
 		}
 	}
@@ -109,25 +115,25 @@ class uprawnienia extends Controller {
 	public function renderuprawnieniaAdd()
 	{
 		$_userModel = new \App\Models\User();
-		$_categoryModel = new \App\Models\rights();
+		$_rightsModel = new \App\Models\rights();
 		
-		$data['uprawnienia'] = $_categoryModel->getrights();
+		$data['uprawnienia'] = $_rightsModel->getrights();
 				
 		if(isset($_POST['submit'])){
-        	$lg = $_POST['login'];
-        	$pk = $_POST['podkategoria'];
-        	
-				
-			$_categoryModel->insertRights(
+			// #SQL INJECTION MUCH FUN WOW
+			$n1 = view::antysql($_POST['login']);
+			$n2 = view::antysql($_POST['podkategoria']);
+							
+			$_rightsModel->insertRights(
 				array(
-					'id_konto' => $lg,
-					'id_podkategoria' => $pk
+					'id_konto' => $n1,
+					'id_podkategoria' => $n2
 					)
 				);
-        	Url::redirect('uprawnienia');
+        	Url::redirect('uprawnienia/all');
         }else{
-			$data['login'] = $_categoryModel->getLogins();
-			$data['subcategories'] = $_categoryModel->getSubcategory();
+			$data['login'] = $_rightsModel->getLogins();
+			$data['subcategories'] = $_rightsModel->getSubcategory();
 			View::render('rights/rightsAdd', $data);
 		}
 	}

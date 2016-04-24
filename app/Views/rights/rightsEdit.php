@@ -29,9 +29,9 @@ use \helpers\form,
 
 	foreach ($data['login'] as $value => $key) {	
 		if ($key->id==$data['aktualne'][0]->id_konto) {
-			echo "<option value='".$key->id."' selected>".$key->login."(".$key->id.")</option> ";	
+			echo "<option value='".$key->id."' selected>".$key->login."</option> ";	
 		}else{
-			echo "<option value='".$key->id."'>".$key->login."(".$key->id.")</option> ";	
+			echo "<option value='".$key->id."'>".$key->login."</option> ";	
 		}
 	}
 	echo "</select></div>";?>

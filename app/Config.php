@@ -37,6 +37,8 @@ class Config
         define('SITEURL', 'localhost/');
         define('OBRAZKI', '/Templates/Default/Assets/images/');
         define('STYLE', '/Templates/Default/Assets/css/');
+        define('OBRAZEKIFOLDER', '/programy/xampp/htdocs/app/templates/default/assets/images/'); // teoretcznie uzywane w kategorie i podkategorie do znalezenia zdj na dysku
+
         /**
          * Define relative base path.
          */

@@ -11,7 +11,7 @@
                             <a href="/podkategorie/<?=$value->id?>" class="btn btn-primary"><?=$data['buttonCategory']?></a>
                             <?php 
                             if ($data['userrole']==4) {
-                                echo "<a href='/podkategorie/$value->id/edit' class='btn btn-primary'>Edytuj</a>";
+                                echo "<a href='/kategorie/$value->id/edit' class='btn btn-primary'>Edytuj</a>";
                             }
                             ?>
                         </p>

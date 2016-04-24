@@ -1,6 +1,29 @@
-body {background-color: #f0f0f0!important;}
+body {background-color: #f0f0f0!important;position: relative;}
 .MenuHeader {width: auto;height: 60px;background-color: #f0ff00;position: fixed;}
 .MenuHeader>span {display: inline;}
 .signin {width: 30%;margin-left: auto;margin-right: auto;}
 .obrazek { max-width: 253px;max-height: 158px;}
-.thumbnail {padding-top: 20px;}
+.thumbnail {padding-top: 20px;width: 262.5px;height: 322px;}
+.input-group-custom{display: block;height: 130px;}
+.input-group-custom{
+	border-top-left-radius: 4px!important;
+	border-top-right-radius: 4px!important;
+	border-bottom-right-radius: 4px!important;
+	border-bottom-left-radius: 4px!important;
+	border: 1px solid #ccc!important;padding-bottom: 142px;}
+.input-group-custom2{
+   	border-top-left-radius: 4px!important;
+	border-top-right-radius: 4px!important;
+	border-bottom-right-radius: 0px!important;
+	border-bottom-left-radius: 0px!important;
+	border-top-color: rgba(0,0,0,0);
+	border-left-color: rgba(0,0,0,0);
+	border-right-color: rgba(0,0,0,0);}
+.select-obrazek{
+	width: auto;
+	height: 187px;
+	background-size: 187px 187px;
+	background-repeat: no-repeat;
+	text-align: center;
+	color: rgba(255, 0, 0, 0);}
+.form-signin{border-style: solid!important;}

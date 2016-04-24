@@ -25,28 +25,27 @@ return array(
 	'buttonSubCategory' => 'Zestawy',
 
 	'menuuczen' => array(
-		array('link' => '/', 'val' => 'Strona Główna'),
 		array('link' => '/kategorie/all', 'val' => 'Kategorie'),
-		array('link' => '/wyniki', 'val' => 'Wyniki'),
-		array('link' => '/zestaw/all', 'val' => 'Twoje Zestawy')),
+		array('link' => '/wynik/all', 'val' => 'Wyniki'),
+		array('link' => '/wynik/graf', 'val' => 'Wyniki graficznie'),
+		array('link' => '/zestaw/all', 'val' => 'Zestawy')),
 	'menuredaktor' => array(
-		array('link' => '/', 'val' => 'Strona Główna'),
 		array('link' => '/kategorie/all', 'val' => 'Kategorie'),
-		array('link' => '/wyniki', 'val' => 'Wyniki'),
+		array('link' => '/wynik/all', 'val' => 'Wyniki'),
+		array('link' => '/wynik/graf', 'val' => 'Wyniki graficznie'),
 		array('link' => '/zestaw/all', 'val' => 'Zestawy')),
 	'menusuperredaktor' => array(
-		array('link' => '/', 'val' => 'Strona Główna'),
 		array('link' => '/kategorie/all', 'val' => 'Kategorie'),
-		array('link' => '/wyniki', 'val' => 'Wyniki'),
+		array('link' => '/wynik/all', 'val' => 'Wyniki'),
+		array('link' => '/wynik/graf', 'val' => 'Wyniki graficznie'),
 		array('link' => '/zestaw/all', 'val' => 'Zestawy')),
 	'menuadmin' => array(
 		array('link' => '/kategorie/all', 'val' => 'Kategorie'),
 		array('link' => '/zestaw/all', 'val' => 'Zestawy'),
 		array('link' => '/user/all', 'val' => 'Zarzadzaj uzytkownikami'),
-		array('link' => '/uprawnienia/all', 'val' => 'Zarzadzaj uprawnieniami')),
+		array('link' => '/uprawnienia/all', 'val' => 'Zarzadzaj uprawnieniami'),
+		array('link' => '/wynik/all', 'val' => 'Wyniki'),
+		array('link' => '/wynik/graf', 'val' => 'Wyniki graficznie')),
 	'nikt' => array(
-		array('link' => '/', 'val' => 'Strona Główna'),
 		array('link' => '/kategorie/all', 'val' => 'Kategorie'))
-
-
 );

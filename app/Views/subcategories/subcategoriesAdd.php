@@ -18,7 +18,13 @@ use \helpers\form,
 .input-group{
   margin-bottom: 15px;
 }
+
+label input[type=radio] {
+    opacity: 0;
+}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <h2 class="form-heading">Dodawanie podkategorii</h2>
 <?php echo "<form method='post' class='form-signin' enctype='multipart/form-data'>";?>
@@ -30,10 +36,67 @@ use \helpers\form,
   <span class="input-group-addon">Opis</span>
 <?php echo Form::input(array('name' =>'opis', 'placeholder' => 'Opis', 'class' => 'form-control','required' => true));?>
 </div>
-<div class="input-group"> 
-  <span class="input-group-addon">Obraz</span>
-<?php echo "<input name=\"obrazek[]\" type=\"file\" class=\"form-control\" style=\"padding-bottom: 40px;\" required/>";?>
+<div class="input-group input-group-custom"> 
+  <span class="input-group-addon input-group-custom2">Obraz</span>
+  <div class="radio col-xs-12 btn-group btn-group-justified">
+    <label class=" btn-primary btn btn-group">
+        <input type="radio" name="radios" class="track-order-change" id="firstRadio" value="1">
+        Aktualne
+    </label>
+    <label class=" btn-primary btn btn-group">
+        <input type="radio" name="radios" class="track-order-change" id="secondRadio" value="2">
+        Dodaj Nowy
+    </label>
+  </div>
+
+  <div class="col-xs-12 panel-collapse collapse" id="firstAccordion">
+      <div>
+<?php echo "
+       <div class='input-group'>
+       <span class='input-group-addon'>Istniejace</span>
+       <select name='obrazek1' class='form-control' required>"; 
+
+       foreach ($data['obrazki'] as $key => $value) {  
+           echo "<option value='".$value."'>".$value."</option>"; 
+       } 
+       echo "</select></div>";?>
+      </div>
+  </div>    
+  <div class="col-xs-12 panel-collapse collapse" id="secondAccordion">
+    <div>
+       <?php echo "<input name=\"obrazek[]\" type=\"file\" class=\"form-control\" style=\"padding-bottom: 40px;\"/>";?>  
+    </div>
+  </div>
+
 </div>
+<script>
+    firstRadio.checked=true;
+
+    $('#firstAccordion').collapse('show');
+
+    $('input[name="radios"]').change( function() {
+        
+        if ($('#firstRadio').is(":checked")){
+            $('#secondAccordion').collapse('hide');
+            $('#firstAccordion').collapse('show');
+        }
+
+        if ($('#secondRadio').is(":checked")){
+            $('#firstAccordion').collapse('hide');
+            $('#secondAccordion').collapse('show');
+        }
+
+  });
+
+</script>
+
+
+
+
+
+
+
+
 <div class="btn-group btn-group-justified">
   <div class="btn-group">
 <?php echo Form::input(array('type' => 'submit', 'name' => 'submit', 'value' => 'Dodaj', 'class' => 'btn btn-lg btn-primary btn-block' ));?>

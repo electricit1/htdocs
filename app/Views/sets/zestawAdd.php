@@ -22,6 +22,10 @@ use \helpers\form,
 
 <?php echo Form::open(array('method' => 'post', 'class' => 'form-signin'));?>
 <h2 class="form-heading">Dodawanie zestawu</h2>
+<div class="input-group"> 
+	<span class="input-group-addon">Nazwa zestawu</span>
+	<?php echo Form::input(array('name' => 'Nazwa_zestawu', 'placeholder' => 'Nazwa zestawu', 'class' => 'form-control', 'required' => true, 'type' => 'text')); ?>
+</div>
 <?php echo "<div class='input-group'>
 		<span class='input-group-addon'>Jezyk 1</span>
 	<select name='Jezyk_1' class='form-control' required>";
@@ -48,23 +52,11 @@ use \helpers\form,
 		echo "<option value='".$key->id."'>".$key->nazwa."</option> ";	
 	}
 	echo "</select></div>";?>
-<div class="input-group"> 
-	<span class="input-group-addon">Nazwa zestawu</span>
-	<?php echo Form::input(array('name' => 'Nazwa_zestawu', 'placeholder' => 'Nazwa zestawu', 'class' => 'form-control', 'required' => true, 'type' => 'text')); ?>
-</div>
+
 <div class="input-group"> 
 	<span class="input-group-addon">Zawartosc zestawu I</span>
-	<?php echo Form::input(array('name' => 'Zawartosc_zestawu1', 'placeholder' => 'Zawartosc zestawu', 'class' => 'form-control', 'required' => true, 'type' => 'text' )); ?>
+	<?php echo Form::textarea(array('style' => 'height: 150px;','name' => 'Zawartosc_zestawu1', 'placeholder' => 'Zawartosc zestawu', 'class' => 'form-control', 'required' => true, 'type' => 'text' )); ?>
 </div>
-<div class="input-group"> 
-	<span class="input-group-addon">Zawartosc zestawu II</span>
-	<?php echo Form::input(array('name' => 'Zawartosc_zestawu2', 'placeholder' => 'Zawartosc zestawu', 'class' => 'form-control', 'required' => true, 'type' => 'text' )); ?>
-</div>
-<div class="input-group"> 
-	<span class="input-group-addon">Ilosc slowek</span>
-	<?php echo Form::input(array('name' => 'Ilosc_slowek', 'placeholder' => 'Ilosc slowek', 'class' => 'form-control', 'required' => true, 'type' => 'text' )); ?>
-</div>
-
 
 <div class="btn-group btn-group-justified">
 <?php echo "<div class=\"btn-group\">".Form::input(array('type' => 'submit', 'name' => 'add', 'value' => 'Dodaj', 'class' => 'btn btn-lg btn-primary' ))."</div>";?>

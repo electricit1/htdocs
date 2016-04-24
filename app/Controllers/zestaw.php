@@ -14,9 +14,13 @@ class zestaw extends Controller {
 		$this->_model = new \App\Models\sets();
 	}
 
-	public function zestawy($idkategorii = 0,$idpodkategorii = 0)
+	public function zestawy($idpodkategorii = 0)
 	{
-		if ($idpodkategorii>=1) {
+		$_setsModel = new \App\Models\sets();
+		$data['istniejacePodkategorie'] = $_setsModel->getSubcategoryID($idpodkategorii);
+		
+		if ($idpodkategorii>=1 and
+			$idpodkategorii==$data['istniejacePodkategorie']->id) {
 			Menu::renderHeaderWithMenu();
 			zestaw::rendersets($idpodkategorii);
 		}else{
@@ -48,10 +52,14 @@ class zestaw extends Controller {
 	public function zestawEdit($idzestawu = 0)
 	{
 		$_userModel = new \App\Models\User();
-		$data['userrole']=$_userModel->getRole(Session::get('userID'));
-
 		$_setsModel = new \App\Models\sets();
-		if ($idzestawu>=1 and Session::get('loggedin') ){
+		$data['userrole']=$_userModel->getRole(Session::get('userID'));
+		$data['istniejaceZestawy'] = $_setsModel->getsetsID($idzestawu);
+
+		
+		if ($idzestawu>=1 and 
+			Session::get('loggedin') and 
+			$idzestawu==$data['istniejaceZestawy']->id){
 			$data['zestaw'] = $_setsModel->getsetsByOne($idzestawu);
 			$data['uprawnienia'] = $_setsModel->getuprawnienia(Session::get('userID'));
 			
@@ -78,41 +86,43 @@ class zestaw extends Controller {
 		$data['userrole']=$_userModel->getRole(Session::get('userID'));
 
 		$_setsModel = new \App\Models\sets();
-		
+
+		$data['zestaw'] = $_setsModel->getsetsByOne($id);
+		$data['lang'] = $_setsModel->getLangs();
+		$data['subcategories'] =$_setsModel->getSubcategory();
+		$data['widocznosc'] = array(1 => 1, 0 => 0);
 
 		if(isset($_POST['submit'])){
-        	$j1 = $_POST['Jezyk_1'];
-        	$j2 = $_POST['Jezyk_2'];
-        	$np = $_POST['Nazwa_podkategorii'];
-        	$nz = $_POST['Nazwa_zestawu'];
-			$z1 = $_POST['Zawartosc_zestawu1'];
-			$z2 = $_POST['Zawartosc_zestawu2'];
-			$is = $_POST['Ilosc_slowek'];
-			$de = $_POST['Data_edycji'];
-			//array('id_jezyk1' => $j1 'id_jezyk2' => $j2 'id_podkategoria' => $np 'nazwa' => $nz 'zestaw' => implode(';',array($z1, $z2) ) 'ilosc_slowek' => $is 'data_edycji' => $de);
-
+			// #SQL INJECTION MUCH FUN WOW
+	
+			$n1 = view::antysql($_POST['Jezyk_1']);	
+			$n2 = view::antysql($_POST['Jezyk_2']);	
+			$n3 = view::antysql($_POST['Nazwa_podkategorii']);	
+			$n4 = view::antysql($_POST['Nazwa_zestawu']);	
+			$n5 = view::antysql($_POST['Zawartosc_zestawu1']);
+			$n6 = count(explode(PHP_EOL, trim($_POST['Zawartosc_zestawu1']))); // to samo przy dodawniniu	
+			$n7 = view::antysql($_POST['Data_edycji']);	
+			$n8 = view::antysql($_POST['widocznosc']);	
+			
 			$_setsModel->updateZestaw(
 				array(
-					'id_jezyk1' => $j1, 
-					'id_jezyk2' => $j2, 
-					'id_podkategoria' => $np, 
-					'nazwa' => $nz, 
-					'zestaw' => implode(';',array($z1, $z2) ), 
-					'ilosc_slowek' => $is, 
-					'data_edycji' => $de
+					'id_jezyk1' => $n1, 
+					'id_jezyk2' => $n2, 
+					'id_podkategoria' => $n3, 
+					'nazwa' => $n4, 
+					'zestaw' => $n5, 
+					'ilosc_slowek' => $n6, 
+					'data_edycji' => date("Y-m-d",time()),
+					'widocznosc' => $n8
 					),
 			 	array('id' => $id)
 			 	);
-        	Url::redirect('kategorie');
+        	Url::redirect('zestaw/all');
         	
         }elseif(isset($_POST['delete'])) {
         	$_setsModel->deleteZestaw(array('id' => $id));
-        	Url::redirect('kategorie');
+        	Url::redirect('zestaw/all');
         }else{
-        	$data['zestaw'] = $_setsModel->getsetsByOne($id);
-			$data['lang'] = $_setsModel->getLangs();
-			$data['subcategories'] =$_setsModel->getSubcategory();	
-
 			View::render('sets/zestawEdit', $data);
 		}
 
@@ -155,33 +165,28 @@ class zestaw extends Controller {
 		
 
 		if(isset($_POST['add'])){
-        	$j1 = $_POST['Jezyk_1'];
-        	$j2 = $_POST['Jezyk_2'];
-        	$np = $_POST['Nazwa_podkategorii'];
-        	$nz = $_POST['Nazwa_zestawu'];
-			$z1 = $_POST['Zawartosc_zestawu1'];
-			$z2 = $_POST['Zawartosc_zestawu2'];
-			$is = $_POST['Ilosc_slowek'];
-			
-			/*print_r( array('id' => $_setsModel->lastZestaw()[0]->id+1,'id_konto' => Session::get('userID'), 'id_jezyk1' => $j1, 'id_jezyk2' => $j2, 'id_podkategoria' => $np,
-			 'nazwa' => $nz, 'zestaw' => implode(';',array($z1, $z2) ),
-			 'ilosc_slowek' => $is, 'data_edycji' => '\''.date("Y-m-d",time()).'\'' ));
-			 */
-
+        	// #SQL INJECTION MUCH FUN WOW
+			$n1 = view::antysql($_POST['Jezyk_1']);	
+			$n2 = view::antysql($_POST['Jezyk_2']);	
+			$n3 = view::antysql($_POST['Nazwa_podkategorii']);	
+			$n4 = view::antysql($_POST['Nazwa_zestawu']);	
+			$n5 = view::antysql($_POST['Zawartosc_zestawu1']);
+			$n6 = count(explode(PHP_EOL, trim($_POST['Zawartosc_zestawu1']))); // to samo przy dodawniniu	
+						
 			$_setsModel->addZestaw(
 				array(
-					'id' => $_setsModel->lastZestaw()[0]->id+1,
 					'id_konto' => Session::get('userID'),
-				 	'id_jezyk1' => $j1,
-				 	'id_jezyk2' => $j2,
-				  	'id_podkategoria' => $np,
-			 		'nazwa' => $nz,
-			  		'zestaw' => implode(';',array($z1, $z2)),
-			 		'ilosc_slowek' => $is,
-			  		'data_edycji' => date("Y-m-d",time())
+				 	'id_jezyk1' => $n1,
+				 	'id_jezyk2' => $n2,
+				  	'id_podkategoria' => $n3,
+			 		'nazwa' => $n4,
+			  		'zestaw' => $n5,
+			 		'ilosc_slowek' => $n6,
+			  		'data_edycji' => date("Y-m-d",time()),
+			  		'widocznosc' => 1
 			  		)
 			);
-        	Url::redirect('kategorie');	
+        	Url::redirect('zestaw/all');	
         }else{
 			$data['lang'] = $_setsModel->getLangs();
 			$data['subcategories'] =$_setsModel->getSubcategory();
@@ -189,5 +194,33 @@ class zestaw extends Controller {
 		}
 	}
 
+	public function zestawAll()
+	{
+		$_setsModel = new \App\Models\sets();
+		
+		Menu::renderHeaderWithMenu();
+		zestaw::rendersetsAll();
+
+		View::rendertemplate('footer',$data);
+	}
+
+	public function rendersetsAll()
+	{
+		$_userModel = new \App\Models\User();
+		$data['userrole']=$_userModel->getRole(Session::get('userID'));
+
+		$_setsModel = new \App\Models\sets();
+		
+		$data['zestawy'] = $_setsModel->getsetsAll();
+		$data['nazwykolumn'] = $_setsModel->getsetscolumns();
+
+		if (Session::get('loggedin')) {
+			$data['uprawnienia'] = $_setsModel->getuprawnienia(Session::get('userID'));
+		}else{
+			$data['uprawnienia'] = $_setsModel->getuprawnienia(-1);
+		}
+		
+		View::render('sets/sets', $data);
+	}
 
 }
